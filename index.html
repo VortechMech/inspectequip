@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>InspectEquip</title>
+
+<style>
+
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+margin:0;
+color:#333;
+background:#f5f6f7;
+line-height:1.6;
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:70px 20px;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+background:white;
+border-bottom:1px solid #eee;
+z-index:1000;
+}
+
+.nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:14px 20px;
+}
+
+.logo img{
+height:42px;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#444;
+font-weight:500;
+font-size:15px;
+}
+
+.nav-links a:hover{
+color:#000;
+}
+
+.nav-buttons{
+display:flex;
+gap:10px;
+}
+
+.store-btn{
+background:#F2C94C;
+padding:10px 16px;
+border-radius:6px;
+text-decoration:none;
+color:#333;
+font-weight:600;
+font-size:14px;
+}
+
+/* HERO */
+
+.hero{
+background:white;
+text-align:center;
+padding:120px 20px;
+}
+
+.hero h1{
+font-size:44px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:19px;
+max-width:700px;
+margin:auto;
+}
+
+.hero-buttons{
+margin-top:35px;
+}
+
+.btn-primary{
+background:#F2C94C;
+padding:15px 30px;
+border:none;
+border-radius:6px;
+font-weight:600;
+cursor:pointer;
+}
+
+.btn-secondary{
+background:#333;
+color:white;
+padding:15px 30px;
+border:none;
+border-radius:6px;
+margin-left:10px;
+cursor:pointer;
+}
+
+.hero-features{
+margin-top:40px;
+color:#666;
+font-size:15px;
+}
+
+/* SECTIONS */
+
+.section{
+background:white;
+margin-top:20px;
+}
+
+.section-alt{
+background:#f5f6f7;
+}
+
+h2{
+font-size:30px;
+margin-bottom:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.feature-box{
+background:#fafafa;
+padding:24px;
+border-radius:8px;
+}
+
+/* TABLE */
+
+.comparison{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+.comparison th,
+.comparison td{
+padding:14px;
+border-bottom:1px solid #ddd;
+text-align:left;
+}
+
+/* VIDEO */
+
+.video{
+text-align:center;
+}
+
+/* CTA */
+
+.cta{
+text-align:center;
+background:white;
+padding:90px 20px;
+}
+
+.cta button{
+margin-top:20px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+color:#777;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+<img src="logo.png" alt="InspectEquip">
+</div>
+
+<nav class="nav-links">
+<a href="#how">How it Works</a>
+<a href="#features">Features</a>
+<a href="#automotive">Automotive</a>
+<a href="#heavy">Heavy & Machinery</a>
+</nav>
+
+<div class="nav-buttons">
+<a class="store-btn">App Store</a>
+<a class="store-btn">Google Play</a>
+</div>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Show customers what you see.</h1>
+
+<p>
+InspectEquip helps mechanics document inspections with photos and generate professional reports that customers can understand and trust.
+</p>
+
+<p><strong>Built by field mechanics for real workshops.</strong></p>
+
+<div class="hero-buttons">
+
+<button class="btn-primary">Start Free Trial</button>
+<button class="btn-secondary">See How It Works</button>
+
+</div>
+
+<p class="hero-features">
+
+✔ Built by field mechanics  
+✔ Photo-based inspection reports  
+✔ Custom inspection checklists
+
+</p>
+
+</section>
+
+
+<!-- PROBLEM -->
+
+<section class="section">
+
+<div class="container">
+
+<h2>Trust is one of the biggest challenges in the industry.</h2>
+
+<p>
+Customers can't see what you see in the workshop or in the field.
+</p>
+
+<p>
+When faults are explained verbally, many customers hesitate to approve work because they don't fully understand the issue.
+</p>
+
+<p>
+InspectEquip removes that barrier by giving technicians a simple way to document inspections and show clear proof of what they find.
+</p>
+
+<p><strong>Instead of telling customers what's wrong — you show them.</strong></p>
+
+</div>
+
+</section>
+
+
+<!-- BUILT BY -->
+
+<section class="section-alt">
+
+<div class="container">
+
+<h2>Built by Field Mechanics</h2>
+
+<p>
+InspectEquip was created by field mechanics who needed a better way to document inspections and show customers what they were seeing.
+</p>
+
+<p>
+After solving the problem in our own workflow, we decided to make the same tool available to other technicians and workshops.
+</p>
+
+<p>
+Now we're giving you the opportunity to solve the same problem in your own workshop.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- VIDEO -->
+
+<section class="section">
+
+<div class="container video">
+
+<h2>See InspectEquip in Action</h2>
+
+<p>Watch a technician complete an inspection and generate a professional report.</p>
+
+<iframe width="720" height="405"
+src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+
+<!-- HOW -->
+
+<section id="how" class="section-alt">
+
+<div class="container">
+
+<h2>How InspectEquip Works</h2>
+
+<div class="features">
+
+<div class="feature-box">
+<h3>Perform the Inspection</h3>
+<p>Use your phone or tablet to complete a structured inspection.</p>
+</div>
+
+<div class="feature-box">
+<h3>Capture Photos</h3>
+<p>Take photos of faults or wear directly within the inspection.</p>
+</div>
+
+<div class="feature-box">
+<h3>Generate a Report</h3>
+<p>Send a professional inspection report showing what was checked.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- AUTOMOTIVE -->
+
+<section id="automotive" class="section">
+
+<div class="container grid">
+
+<div>
+
+<h2>For Automotive Workshops & Mobile Mechanics</h2>
+
+<p>
+InspectEquip helps automotive workshops document vehicle inspections with clear reports and photo evidence that customers can understand.
+</p>
+
+<ul>
+<li>Routine servicing</li>
+<li>Brake & suspension inspections</li>
+<li>Roadworthy checks</li>
+<li>Pre-purchase inspections</li>
+<li>Condition reports</li>
+</ul>
+
+</div>
+
+<div>
+
+<img src="automotive-screenshot.png">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HEAVY -->
+
+<section id="heavy" class="section-alt">
+
+<div class="container grid">
+
+<div>
+
+<img src="heavy-screenshot.png">
+
+</div>
+
+<div>
+
+<h2>For Heavy Vehicle & Machinery Technicians</h2>
+
+<p>
+InspectEquip makes it easy to document inspections for heavy vehicles and machinery with photo evidence and professional reports.
+</p>
+
+<ul>
+<li>Fleet maintenance</li>
+<li>Machinery condition reports</li>
+<li>Pre-start inspections</li>
+<li>Equipment inspections</li>
+<li>Compliance documentation</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section id="features" class="section">
+
+<div class="container">
+
+<h2>Features</h2>
+
+<div class="features">
+
+<div class="feature-box">
+<h3>Photo Evidence</h3>
+<p>Attach photos directly to inspection items.</p>
+</div>
+
+<div class="feature-box">
+<h3>Professional Reports</h3>
+<p>Clear reports customers can understand.</p>
+</div>
+
+<div class="feature-box">
+<h3>Custom Checklists</h3>
+<p>Create inspection checklists for any vehicle or machine.</p>
+</div>
+
+<div class="feature-box">
+<h3>Inspection Records</h3>
+<p>All inspections stored in one place.</p>
+</div>
+
+<div class="feature-box">
+<h3>Built for Mobile</h3>
+<p>Designed for phones and tablets in the workshop or field.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COMPARISON -->
+
+<section class="section-alt">
+
+<div class="container">
+
+<h2>InspectEquip vs Paper Inspections</h2>
+
+<table class="comparison">
+
+<tr>
+<th></th>
+<th>Paper</th>
+<th>InspectEquip</th>
+</tr>
+
+<tr>
+<td>Photo Evidence</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+
+<tr>
+<td>Professional Reports</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+
+<tr>
+<td>Inspection History</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+
+<tr>
+<td>Easy Sharing</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+
+<tr>
+<td>Custom Checklists</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- SAMPLE REPORT -->
+
+<section class="section">
+
+<div class="container">
+
+<h2>Sample Inspection Report</h2>
+
+<p>See what your customers will see.</p>
+
+<img src="report-preview.png">
+
+</div>
+
+</section>
+
+
+<!-- WHO -->
+
+<section class="section-alt">
+
+<div class="container">
+
+<h2>Who InspectEquip Is Built For</h2>
+
+<ul>
+<li>Automotive workshops</li>
+<li>Mobile mechanics</li>
+<li>Heavy vehicle technicians</li>
+<li>Machinery mechanics</li>
+<li>Fleet maintenance teams</li>
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Start building trust with every inspection.</h2>
+
+<p>
+InspectEquip helps mechanics turn inspections into clear, professional reports customers can understand.
+</p>
+
+<button class="btn-primary">Get Started</button>
+
+</section>
+
+
+<footer>
+InspectEquip
+</footer>
+
+
+</body>
+</html>
