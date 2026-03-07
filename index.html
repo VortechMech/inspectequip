@@ -43,6 +43,19 @@ justify-content:space-between;
 padding:14px 20px;
 }
 
+.phone-video{
+max-width:320px;
+margin:40px auto 0;
+}
+
+.phone-video video{
+width:100%;
+height:auto;
+display:block;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.12);
+}
+  
 .video-wrapper{
 position:relative;
 padding-bottom:56.25%;
@@ -440,15 +453,13 @@ Now we're giving you the opportunity to solve the same problem in your own works
 
 <h2>See InspectEquip in Action</h2>
 
-<p>Watch a technician complete an inspection and generate a professional report.</p>
+<p>Watch a a quick run-through of an inspection from start to finish.</p>
 
-<div class="video-wrapper">
-<iframe
-src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-title="InspectEquip Demo"
-frameborder="0"
-allowfullscreen>
-</iframe>
+<div class="phone-video">
+  <video controls playsinline>
+    <source src="images/inspectequip-demo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </div>
 </div>
 
