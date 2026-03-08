@@ -228,7 +228,7 @@ width:auto;
 
 .section{
   background:white;
-  margin-top:20px;
+  margin-top:40px;
 }
 
 #how,
@@ -241,7 +241,7 @@ scroll-margin-top:100px;
 
 .section-alt{
   background:#f5f6f7;
-  margin-top:20px;
+  margin-top:40px;
 }
 
 h2{
@@ -295,7 +295,13 @@ h3{
 .feature-box{
   background:#fafafa;
   padding:24px;
-  border-radius:8px;
+  border-radius:10px;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-box:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 24px rgba(0,0,0,0.08);
 }
 
 /* VIDEO */
@@ -331,7 +337,9 @@ h3{
   border-bottom:1px solid #ddd;
   text-align:left;
 }
-
+.comparison tr:nth-child(even){
+  background:#fafafa;
+}
 /* CTA */
 
 .cta{
