@@ -136,7 +136,18 @@ header{
 
 /* SECTIONS */
 
-  
+ .download-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.download-buttons img{
+height:60px;
+width:auto;
+} 
 
 .section{
   background:white;
@@ -455,12 +466,14 @@ order:2;
 InspectEquip helps mechanics document inspections with photos and generate clear reports customers can understand and trust.
 </p>
 
-<p><strong>Built by field mechanics who were tired of greasy paperwork and hard-to-read inspection sheets.</strong></p>
+<p><strong>Start your free trial today.</strong></p>
 
-  <div class="hero-buttons">
-    <button class="btn-primary">Start Free Trial</button>
-    <button class="btn-secondary">See How It Works</button>
-  </div>
+<div class="hero-buttons">
+
+<a class="btn-primary" href="#download">Download App</a>
+<a class="btn-secondary" href="#video">Watch Demo</a>
+
+</div>
 
   <p class="hero-features">
     ✔ Built by field mechanics<br>
@@ -709,14 +722,27 @@ Now we're giving other mechanics and workshops the opportunity to solve the same
   </div>
 </section>
 
-<section class="cta">
-  <h2>Start building trust with every inspection.</h2>
+<!-- DOWNLOAD / CTA -->
 
-  <p>
-    InspectEquip helps mechanics turn inspections into clear, professional reports customers can understand.
-  </p>
+<section id="download" class="cta">
 
-  <button class="btn-primary">Get Started</button>
+<h2>Start building trust with every inspection.</h2>
+
+<p>
+InspectEquip helps mechanics turn inspections into clear, professional reports customers can understand.
+</p>
+
+<div class="download-buttons">
+
+<img src="images/app-store-badge.png" alt="App Store coming soon">
+
+<img src="images/google-play-badge.png" alt="Google Play coming soon">
+
+</div>
+  <p style="margin-top:15px; color:#666;">
+Coming soon to the App Store and Google Play.
+</p>
+
 </section>
 
 <section id="contact" class="section">
