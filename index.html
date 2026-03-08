@@ -25,27 +25,45 @@ img{
   max-width:100%;
   height:auto;
 }
-<script>
 
-let currentSlide = 0;
-
-function showSlide(index){
-
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-
-slides.forEach(slide => slide.classList.remove('active'));
-dots.forEach(dot => dot.classList.remove('active'));
-
-slides[index].classList.add('active');
-dots[index].classList.add('active');
-
-currentSlide = index;
-
+.report-slider{
+  max-width:420px;
+  margin:40px auto 0;
+  text-align:center;
 }
 
-</script>
+.slides{
+  position:relative;
+}
 
+.slide{
+  display:none;
+  width:100%;
+  border-radius:10px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
+.slide.active{
+  display:block;
+}
+
+.slider-dots{
+  margin-top:15px;
+}
+
+.dot{
+  height:10px;
+  width:10px;
+  margin:0 6px;
+  background:#ccc;
+  border-radius:50%;
+  display:inline-block;
+  cursor:pointer;
+}
+
+.dot.active{
+  background:#333;
+}
 /* CONTAINER */
 
 .container{
