@@ -315,7 +315,36 @@ footer{
 }
 
 /* MOBILE */
+@media(max-width:900px){
 
+.grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.nav{
+flex-direction:column;
+gap:10px;
+}
+
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.form-row{
+grid-template-columns:1fr;
+}
+
+.grid img{
+max-width:300px;
+}
+
+}
 @media (min-width:768px){
   .how-grid{
     grid-template-columns:repeat(3,1fr);
