@@ -352,6 +352,13 @@ max-width:300px;
 }
 
 @media (max-width:900px){
+  #heavy .heavy-text{
+order:1;
+}
+
+#heavy .heavy-image{
+order:2;
+}
   .grid{
     grid-template-columns:1fr;
   }
@@ -553,12 +560,14 @@ max-width:300px;
 </section>
 
 <section id="heavy" class="section-alt">
-  <div class="container grid">
-    <div>
-      <img src="images/heavy-screenshot.png" alt="Heavy vehicle and machinery inspection screenshot">
-    </div>
 
-    <div>
+<div class="container grid">
+
+<div class="heavy-image">
+<img src="images/heavy-screenshot.png" alt="Heavy vehicle and machinery inspection screenshot">
+</div>
+
+<div class="heavy-text">
       <h2>For Heavy Vehicle & Machinery Technicians</h2>
 
       <p>
