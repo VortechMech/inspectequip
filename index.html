@@ -34,6 +34,7 @@ img{
 
 .slides{
   position:relative;
+  touch-action:pan-y;
 }
 
 .slide{
@@ -41,6 +42,7 @@ img{
   width:100%;
   border-radius:10px;
   box-shadow:0 20px 40px rgba(0,0,0,0.12);
+  cursor:pointer;
 }
 
 .slide.active{
@@ -49,6 +51,43 @@ img{
 
 .slider-dots{
   margin-top:15px;
+}
+
+.dot{
+  height:10px;
+  width:10px;
+  margin:0 6px;
+  background:#ccc;
+  border-radius:50%;
+  display:inline-block;
+  cursor:pointer;
+}
+
+.dot.active{
+  background:#333;
+}
+
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+@media(max-width:900px){
+  .slide{
+    cursor:default;
+  }
 }
 
 .dot{
@@ -751,9 +790,9 @@ Now we're giving other mechanics and workshops the opportunity to solve the same
 <div class="report-slider">
 
 <div class="slides">
-<img src="images/report1.png" class="slide active">
-<img src="images/report2.png" class="slide">
-<img src="images/report3.png" class="slide">
+<img src="images/report1.png" class="slide active" onclick="handleReportClick(this.src)">
+<img src="images/report2.png" class="slide" onclick="handleReportClick(this.src)">
+<img src="images/report3.png" class="slide" onclick="handleReportClick(this.src)">
 </div>
 
 <div class="slider-dots">
@@ -867,24 +906,74 @@ InspectEquip is a software application operated by Vortech Mechanical Services P
 
 </footer>
 <script>
-
 let currentSlide = 0;
 
 function showSlide(index){
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
 
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
+  if (!slides.length) return;
 
-slides.forEach(slide => slide.classList.remove('active'));
-dots.forEach(dot => dot.classList.remove('active'));
+  if (index < 0) index = slides.length - 1;
+  if (index >= slides.length) index = 0;
 
-slides[index].classList.add('active');
-dots[index].classList.add('active');
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
 
-currentSlide = index;
+  slides[index].classList.add('active');
+  dots[index].classList.add('active');
 
+  currentSlide = index;
 }
 
+function handleReportClick(src){
+  if (window.innerWidth > 900) {
+    openLightbox(src);
+  }
+}
+
+function openLightbox(src){
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+
+  img.src = src;
+  lightbox.style.display = 'flex';
+}
+
+function closeLightbox(){
+  document.getElementById('lightbox').style.display = 'none';
+}
+
+const slidesContainer = document.querySelector('.slides');
+
+if (slidesContainer) {
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  slidesContainer.addEventListener('touchstart', function(e){
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  slidesContainer.addEventListener('touchend', function(e){
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe(){
+    const swipeDistance = touchEndX - touchStartX;
+
+    if (Math.abs(swipeDistance) < 40) return;
+
+    if (swipeDistance < 0) {
+      showSlide(currentSlide + 1);
+    } else {
+      showSlide(currentSlide - 1);
+    }
+  }
+}
 </script>
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" alt="Expanded inspection report preview">
+</div>
 </body>
 </html>
