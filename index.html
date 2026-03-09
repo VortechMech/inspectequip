@@ -859,9 +859,11 @@ Coming soon to the App Store and Google Play.
 
     <form class="contact-form" action="https://formspree.io/f/xwvrvlvy" method="POST">
       
+      <input type="hidden" name="form_loaded_at" id="form_loaded_at">
       <input type="hidden" name="_subject" value="New InspectEquip Contact Form Submission">
       <input type="hidden" name="source" value="InspectEquip Website">
-
+      <input type="hidden" name="_next" value="https://inspectequip.com/thanks.html">
+      
       <div style="position:absolute; left:-9999px; opacity:0;" aria-hidden="true">
         <label for="website">Website</label>
         <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
@@ -989,5 +991,26 @@ if (slidesContainer) {
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img" alt="Expanded inspection report preview">
 </div>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const field = document.getElementById("form_loaded_at");
+  if(field){
+    field.value = Date.now();
+  }
+
+  const form = document.querySelector(".contact-form");
+  if(form){
+    form.addEventListener("submit", function(e){
+      const loaded = parseInt(document.getElementById("form_loaded_at").value, 10);
+      const now = Date.now();
+
+      if(now - loaded < 3000){ // less than 3 seconds
+        e.preventDefault();
+        alert("Submission blocked. Please try again.");
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>
