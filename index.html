@@ -340,7 +340,24 @@ h3{
 .comparison td{
   padding:14px;
   border-bottom:1px solid #ddd;
+}
+.comparison th{
+  font-weight:600;
+}
+  .comparison + p{
+margin-top:30px;
+}
+
+/* First column (feature names) */
+.comparison td:first-child,
+.comparison th:first-child{
   text-align:left;
+}
+
+/* Paper / InspectEquip columns */
+.comparison td:not(:first-child),
+.comparison th:not(:first-child){
+  text-align:center;
 }
 .comparison tr:nth-child(even){
   background:#fafafa;
@@ -800,9 +817,8 @@ InspectEquip works without internet connection and stores inspection data locall
         <td>✅</td>
       </tr>
     </table>
-    <p style="margin-top:20px; color:#555; max-width:700px;">
-InspectEquip is designed with a simple principle: your inspection data stays with you.
-Inspection reports and photos are stored locally on your device — no remote servers storing your inspection data.
+  <p style="margin-top:20px; color:#555; max-width:700px;">
+InspectEquip combines the simplicity of paper with the power of digital inspections — professional reports, photo evidence, and inspection history, while your data stays stored locally on your device.
 </p>
   </div>
 </section>
