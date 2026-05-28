@@ -57,7 +57,6 @@ margin-top:20px;
 border-radius:4px;
 }
 
-
 .footer{
 text-align:center;
 margin-top:50px;
@@ -84,11 +83,11 @@ text-decoration:underline;
 <h1>InspectEquip Help</h1>
 
 <p>
-InspectEquip™ is designed to help workshops, mechanics, and operators record and generate inspection reports quickly and efficiently.
+InspectEquip™ is designed to help workshops, mechanics, and operators record and generate inspection, breakdown, and repair reports quickly and efficiently.
 </p>
 
 <p>
-This page covers common questions about inspections, subscriptions, device transfers, reports, tutorials, and troubleshooting.
+This page covers common questions about inspections, breakdowns, repairs, customers, vehicles, subscriptions, device transfers, reports, tutorials, and troubleshooting.
 </p>
 
 <h2>Video Tutorials</h2>
@@ -137,15 +136,16 @@ Managing Customers and Vehicles
 Subscriptions and Device Transfers
 </a>
 </li>
-
 </ul>
-
 
 <h2>Getting Started</h2>
 
 <p>
-To begin an inspection, open the app and tap <strong>Start New Inspection</strong>.
-Select the inspection type, enter the job details, and complete the checklist items as required.
+From the home screen, you can access inspections, breakdown reports, repair reports, customer and vehicle management, subscription management, and settings.
+</p>
+
+<p>
+To begin an inspection, tap <strong>Inspections</strong>, start a new inspection, select the vehicle or equipment type, enter the job details, and complete the checklist items as required.
 </p>
 
 <p>
@@ -164,30 +164,66 @@ Each inspection is automatically assigned a unique Inspection ID and records ins
 <p>
 Inspection items may also be left unselected if they are not required as part of the report. Unselected items are hidden from generated reports by default. This behaviour can be enabled or disabled in Report Settings.
 </p>
-  
+
+<h2>Breakdown Reports</h2>
+
+<p>
+Breakdown reports are used to document faults, findings, repairs carried out, parts used, machine status, and related notes when a vehicle, machine, or piece of equipment has broken down.
+</p>
+
+<p>
+To create a breakdown report, tap <strong>Breakdowns</strong> from the home screen and create a new report. Enter the customer, vehicle or machine details, then complete the breakdown details and status fields.
+</p>
+
+<p>
+Breakdown reports can include photos, signatures, technician comments, status information, and a breakdown-specific disclaimer based on your Report Settings.
+</p>
+
+<h2>Repair Reports</h2>
+
+<p>
+Repair reports are used to document repair or rectification work completed on a vehicle, machine, or piece of equipment.
+</p>
+
+<p>
+To create a repair report, tap <strong>Repairs</strong> from the home screen and create a new report. Enter the customer, vehicle or machine details, then add one or more repair items.
+</p>
+
+<p>
+Each repair item can include the fault or defect reported, technician findings, repair work carried out, parts used, and photos.
+</p>
+
+<p>
+Repair reports can include photos, signatures, technician comments, status information, and a repair-specific disclaimer based on your Report Settings.
+</p>
+
 <h2>Saving Progress</h2>
 
 <p>
-Inspection progress is saved while you work. However, inspections are currently stored locally on your device only.
+Inspection, breakdown, and repair progress is stored locally while you work. However, data is currently stored locally on your device only.
 </p>
 
 <div class="notice">
 <strong>Important:</strong><br>
-If your device is lost, reset, damaged, or the app is removed, locally stored inspections may be permanently lost.
+If your device is lost, reset, damaged, or the app is removed, locally stored inspections, breakdowns, repairs, customers, vehicles, and reports may be permanently lost.
 </div>
 
 <h2>Generating Reports</h2>
 
 <p>
-Once an inspection is completed, you can generate a PDF report containing:
+Inspections, breakdowns, and repairs can generate PDF reports containing details such as:
 </p>
 
 <ul>
-<li>Job information</li>
-<li>Inspection results</li>
-<li>Notes</li>
-<li>Photos</li>
-<li>Inspection summary</li>
+<li>job information</li>
+<li>customer details</li>
+<li>vehicle, machine, or equipment details</li>
+<li>inspection results, breakdown details, or repair items</li>
+<li>notes and technician comments</li>
+<li>photos</li>
+<li>signatures</li>
+<li>status information</li>
+<li>report disclaimers</li>
 </ul>
 
 <p>
@@ -195,7 +231,69 @@ Reports can be printed, shared, emailed, or saved to your device or cloud storag
 </p>
 
 <p>
-We recommend using a cloud storage service such as Google Drive or Dropbox, especially if you use more than one device on your subscription or want additional backup protection for your reports and inspection records.
+We recommend using a cloud storage service such as Google Drive, iCloud Drive, OneDrive, or Dropbox if you want additional backup protection for your generated PDF reports.
+</p>
+
+<h2>Customers and Vehicles</h2>
+
+<p>
+Customer and vehicle records are stored locally on your device and can be used when creating inspections, breakdown reports, and repair reports.
+</p>
+
+<p>
+From the <strong>Manage Customers</strong> page, you can add, edit, search, and delete customer records and their associated vehicles.
+</p>
+
+<h2>Exporting and Importing Customers and Vehicles</h2>
+
+<p>
+InspectEquip can export and import customer and vehicle data to help with backups, moving to a new phone or tablet, or setting up an additional workshop device.
+</p>
+
+<p>
+From the <strong>Manage Customers</strong> page, use the menu in the top right to export or import customer and vehicle data.
+</p>
+
+<p>
+The export creates a ZIP file containing customer and vehicle data only.
+</p>
+
+<p>
+The export does <strong>not</strong> include:
+</p>
+
+<ul>
+<li>inspections</li>
+<li>breakdown reports</li>
+<li>repair reports</li>
+<li>PDF files</li>
+<li>photos</li>
+<li>inspection history or report history</li>
+<li>subscriptions</li>
+<li>licence keys or device access details</li>
+</ul>
+
+<p>
+When importing, customers and vehicles are merged into your existing data. Existing data is not wiped. Duplicates are skipped where possible.
+</p>
+
+<div class="notice">
+<strong>Important:</strong><br>
+Customer and vehicle export files may contain business or customer information. Only share export files with people or devices you trust, and delete old export files when they are no longer needed.
+</div>
+
+<h2>Report Settings and Disclaimers</h2>
+
+<p>
+Report Settings allow you to manage your company header, contact details, logo, report display options, and report disclaimers.
+</p>
+
+<p>
+Inspections, breakdown reports, and repair reports can each have their own disclaimer text and disclaimer visibility setting.
+</p>
+
+<p>
+You can edit or reset each disclaimer from Report Settings.
 </p>
 
 <h2>Subscriptions &amp; Licence Access</h2>
@@ -266,6 +364,10 @@ Once verified:
 <li>subscription management may move to the newly verified device.</li>
 </ul>
 
+<p>
+Customer and vehicle data is not automatically transferred as part of subscription access recovery. Use the customer and vehicle export/import feature if you need to move customer and vehicle records to another device.
+</p>
+
 <h2>Recovery Email</h2>
 
 <p>
@@ -304,11 +406,15 @@ If entitlement verification cannot be completed within the allowed period, acces
 <h2>PIN Security</h2>
 
 <p>
-PIN security is enabled by default to help protect inspection data stored on the device.
+PIN security is enabled by default to help protect data stored on the device.
+</p>
+
+<p>
+Changing your PIN from Settings will not erase your stored data.
 </p>
 
 <div class="notice">
-Resetting a forgotten PIN may permanently erase locally stored inspection history.
+Resetting a forgotten PIN may permanently erase locally stored inspections, breakdowns, repairs, customers, and vehicles.
 </div>
 
 <h2>Troubleshooting</h2>
@@ -332,10 +438,14 @@ Make sure:
 Some subscription plans limit the number of registered devices. Recovering access on another device may replace the previously active device.
 </p>
 
-<h3>My reports or inspections are missing</h3>
+<h3>My reports, customers, or vehicles are missing</h3>
 
 <p>
-Inspection data is currently stored locally on the device. Deleted app data, device resets, or device loss may result in permanent data loss.
+Inspection, breakdown, repair, customer, and vehicle data is currently stored locally on the device. Deleted app data, device resets, app removal, or device loss may result in permanent data loss.
+</p>
+
+<p>
+If you previously exported customer and vehicle data, you can import the ZIP file from the Manage Customers page.
 </p>
 
 <h2>Contact Support</h2>
@@ -356,5 +466,3 @@ If you require assistance, feedback, or support, please contact:
 
 </body>
 </html>
-
-
