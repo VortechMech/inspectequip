@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="google-site-verification" content="yXBopTSJTGdJuGjvL56NG_aYqVHvQ56mfVxfFH70jRQ" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>InspectEquip | Inspection, Breakdown & Repair Reporting App</title>
+<style>
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  margin:0;
+  color:#333;
+  background:#f5f6f7;
+  line-height:1.6;
+}
+.grid img{
+max-width:380px;
+width:100%;
+height:auto;
+display:block;
+margin:auto;
+}
+img{
+  max-width:100%;
+  height:auto;
+}
+
+.report-slider{
+  max-width:420px;
+  margin:40px auto 0;
+  text-align:center;
+}
+
+.slides{
+  position:relative;
+  touch-action:pan-y;
+}
+
+.slide{
+  display:none;
+  width:100%;
+  border-radius:10px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+  cursor:pointer;
+}
+
+.slide.active{
+  display:block;
+}
+
+.slider-dots{
+  margin-top:15px;
+}
+
+.dot{
+  height:10px;
+  width:10px;
+  margin:0 6px;
+  background:#ccc;
+  border-radius:50%;
+  display:inline-block;
+  cursor:pointer;
+}
+
+.dot.active{
+  background:#333;
+}
+
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+@media(max-width:900px){
+  .slide{
+    cursor:default;
+  }
+}
+
+.dot{
+  height:10px;
+  width:10px;
+  margin:0 6px;
+  background:#ccc;
+  border-radius:50%;
+  display:inline-block;
+  cursor:pointer;
+}
+
+.dot.active{
+  background:#333;
+}
+/* CONTAINER */
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  background:white;
+  border-bottom:1px solid #eee;
+  z-index:1000;
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 20px;
+}
+
+.logo img{
+  height:42px;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#444;
+  font-weight:500;
+  font-size:15px;
+}
+
+.nav-links a:hover{
+  color:#000;
+}
+
+/* HERO */
+
+.hero{
+  background:white;
+  text-align:center;
+  padding:120px 20px;
+}
+
+.hero img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto 40px auto;
+}
+
+.hero h1{
+  font-size:44px;
+  line-height:1.2;
+  margin:0 0 20px 0;
+}
+
+.hero p{
+  font-size:19px;
+  max-width:700px;
+  margin:0 auto 16px auto;
+}
+
+.hero-buttons{
+  margin-top:35px;
+  margin-bottom:40px;
+}
+
+.btn-primary{
+  background:#F2C94C;
+  color:#333;
+  padding:15px 30px;
+  border:none;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.btn-secondary{
+  background:#333;
+  color:white;
+  padding:15px 30px;
+  border:none;
+  border-radius:6px;
+  margin-left:10px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.hero-features{
+  margin:0 auto;
+  color:#666;
+  font-size:15px;
+  line-height:1.8;
+}
+
+/* SECTIONS */
+
+ .download-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.download-buttons img{
+  height:60px;
+  width:auto;
+  transition:transform 0.15s ease;
+}
+
+.download-buttons img:hover{
+  transform:scale(1.05);
+}
+
+.section{
+  background:white;
+  margin-top:40px;
+}
+
+#how,
+#features,
+#automotive,
+#pricing,
+#heavy,
+#contact{
+scroll-margin-top:100px;
+}
+
+.section-alt{
+  background:#f5f6f7;
+  margin-top:40px;
+}
+
+h2{
+  font-size:30px;
+  margin:0 0 20px 0;
+  line-height:1.2;
+}
+
+h3{
+  margin-top:0;
+  line-height:1.3;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+/* HOW IT WORKS */
+
+.how-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:25px;
+}
+
+.feature-card{
+  background:#fafafa;
+  padding:24px;
+  border-radius:8px;
+  text-align:center;
+}
+
+.feature-icon{
+  width:180px;
+  height:auto;
+  display:block;
+  margin:0 auto 24px auto;
+}
+
+/* GENERAL FEATURES */
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.feature-box{
+  background:#fafafa;
+  padding:24px;
+  border-radius:10px;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-box:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 24px rgba(0,0,0,0.08);
+}
+
+
+/* PRICING */
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  margin-top:30px;
+}
+
+.pricing-card{
+  background:#fafafa;
+  border:1px solid #e5e5e5;
+  border-radius:12px;
+  padding:28px 24px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.04);
+}
+
+.pricing-card h3{
+  margin-bottom:8px;
+}
+
+.price{
+  font-size:32px;
+  font-weight:700;
+  color:#333;
+  margin:14px 0 6px;
+}
+
+.price span{
+  font-size:15px;
+  font-weight:500;
+  color:#666;
+}
+
+.pricing-note{
+  text-align:center;
+  max-width:760px;
+  margin:28px auto 0;
+  color:#666;
+  font-size:15px;
+}
+
+/* VIDEO */
+
+.phone-video{
+  max-width:320px;
+  margin:40px auto 0;
+}
+
+.phone-video video{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.12);
+}
+
+.video{
+  text-align:center;
+}
+
+/* TABLE */
+
+.comparison{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+
+.comparison th,
+.comparison td{
+  padding:14px;
+  border-bottom:1px solid #ddd;
+}
+.comparison th{
+  font-weight:600;
+}
+  .comparison + p{
+margin-top:30px;
+}
+.comparison-caption{
+margin-top:30px;
+max-width:720px;
+font-size:16px;
+color:#555;
+text-align:center;
+margin-left:auto;
+margin-right:auto;
+line-height:1.6;
+}
+/* First column (feature names) */
+.comparison td:first-child,
+.comparison th:first-child{
+  text-align:left;
+}
+
+/* Paper / InspectEquip columns */
+.comparison td:not(:first-child),
+.comparison th:not(:first-child){
+  text-align:center;
+}
+.comparison tr:nth-child(even){
+  background:#fafafa;
+}
+/* CTA */
+
+.cta{
+  text-align:center;
+  background:white;
+  padding:90px 20px;
+  margin-top:20px;
+}
+
+.cta button{
+  margin-top:20px;
+}
+
+/* CONTACT */
+
+.contact-section{
+  max-width:800px;
+}
+
+.contact-intro{
+  max-width:650px;
+  margin-bottom:30px;
+  color:#666;
+}
+
+.contact-form{
+  background:#fff;
+  padding:32px;
+  border:1px solid #e9e9e9;
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.04);
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-bottom:20px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:20px;
+}
+
+.form-group label{
+  font-weight:600;
+  margin-bottom:8px;
+  font-size:14px;
+  color:#333;
+}
+
+.form-group input,
+.form-group textarea{
+  padding:14px 16px;
+  border:1px solid #d9d9d9;
+  border-radius:8px;
+  font-size:16px;
+  font-family:inherit;
+  color:#333;
+  background:#fff;
+  box-sizing:border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+  outline:none;
+  border-color:#FFC700;
+  box-shadow:0 0 0 3px rgba(255,199,0,0.15);
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:40px 20px;
+  color:#777;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.nav{
+flex-direction:column;
+gap:10px;
+}
+
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.form-row{
+grid-template-columns:1fr;
+}
+
+.grid img{
+max-width:300px;
+}
+
+}
+@media (min-width:768px){
+  .how-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media (max-width:900px){
+  .grid > div{
+margin-bottom:20px;
+}
+  #heavy .heavy-text{
+order:1;
+}
+
+#heavy .heavy-image{
+order:2;
+}
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .nav{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+  }
+
+  .form-row{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:640px){
+  .hero{
+    padding:90px 20px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .btn-primary,
+  .btn-secondary{
+    width:100%;
+    margin:0 0 12px 0;
+  }
+
+  .feature-icon{
+    width:84px;
+    height:84px;
+  }
+
+  .comparison{
+    font-size:14px;
+  }
+
+  .comparison th,
+  .comparison td{
+    padding:10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <img src="images/InspectEquipForWhiteBG.png" alt="InspectEquip">
+    </div>
+
+    <nav class="nav-links">
+      <a href="#how">How it Works</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#automotive">Automotive</a>
+      <a href="#heavy">Heavy & Machinery</a>
+      <a href="https://inspectequip.com/help.html">App Help</a>
+      <a href="#contact">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="images/devicesmockupa.png" alt="InspectEquip app preview">
+
+<h1>Inspections, Breakdown Reports & Repair Reports.</h1>
+
+<p>
+InspectEquip™ helps mechanics create professional inspection reports, breakdown reports and repair reports directly from their phone or tablet.
+</p>
+
+<p>
+Capture photos, record defects, collect signatures and generate customer-ready PDF reports in minutes.
+</p>
+
+<p><strong>Built by a mechanic. Built for mechanics.</strong></p>
+
+<p><strong>Start your free trial today.</strong></p>
+
+<div class="download-buttons">
+
+<a href="https://apps.apple.com/app/id6761047977" target="_blank" rel="noopener">
+  <img src="images/app-store-badge.png" alt="Download on the App Store">
+</a>
+
+<a href="https://play.google.com/store/apps/details?id=com.inspectequip.app" target="_blank" rel="noopener">
+  <img src="images/google-play-badge.png" alt="Get it on Google Play">
+</a>
+
+</div>
+
+<div class="hero-buttons">
+
+<a class="btn-secondary" href="#video">Watch Demo</a>
+
+</div>
+
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Trust is one of the biggest challenges in the industry.</h2>
+
+    <p>
+      Customers can't see what you see in the workshop or in the field.
+    </p>
+
+    <p>
+      When faults are explained verbally, many customers hesitate to approve work because they don't fully understand the issue.
+    </p>
+
+    <p>
+      InspectEquip removes that barrier by giving mechanics a simple way to document inspections and show clear proof of what they find.
+    </p>
+
+    <p><strong>Instead of telling customers what's wrong — you show them.</strong></p>
+  </div>
+</section>
+
+<!-- BUILT BY -->
+
+<section class="section-alt">
+
+<div class="container">
+
+<h2>Built by Field Mechanics</h2>
+
+<p>
+InspectEquip was created by field mechanics who were tired of trying to hold pens with greasy hands and handing customers dirty, often hard-to-read paperwork.
+</p>
+
+<p>
+We needed a better way to document inspections, breakdowns and repairs without relying on dirty paperwork, messy handwriting or paperwork that gets lost.
+</p>
+
+<p>
+So we built InspectEquip to streamline reporting in our own workflow.</p>
+
+<p>
+Now we're giving other mechanics and workshops the opportunity to solve the same problem in theirs.
+</p>
+
+</div>
+
+</section>
+
+</section>
+
+<section id="video" class="section">
+  <div class="container video">
+    <h2>See InspectEquip in Action</h2>
+
+<p>Watch how InspectEquip helps mechanics create inspection reports, breakdown reports and repair reports directly from their device.</p>
+    
+    <div class="phone-video">
+      <video controls playsinline>
+        <source src="images/0614.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="section-alt">
+  <div class="container">
+    <h2>How InspectEquip Works</h2>
+
+    <div class="how-grid">
+  <div class="feature-card">
+    <img src="images/inspectequip_square_1.png" class="feature-icon" alt="Mechanic starting a report with phone">
+    <h3>Start a Report</h3>
+    <p>Choose an inspection, breakdown or repair report and enter the customer and vehicle details.</p>
+  </div>
+
+  <div class="feature-card">
+    <img src="images/inspectequip_square_2.png" class="feature-icon" alt="Mechanic taking photo evidence">
+    <h3>Capture Photos & Notes</h3>
+    <p>Document faults, repairs and important findings with photos, comments and technician notes.</p>
+  </div>
+
+  <div class="feature-card">
+    <img src="images/inspectequip_square_3.png" class="feature-icon" alt="Mechanic showing professional report">
+    <h3>Generate a Professional PDF</h3>
+    <p>Create a customer-ready report that can be saved, shared or sent in minutes.</p>
+  </div>
+</div>
+  </div>
+</section>
+
+<section id="automotive" class="section">
+  <div class="container grid">
+    <div>
+      <h2>For Automotive Workshops & Mobile Mechanics</h2>
+
+      <p>
+InspectEquip helps automotive workshops and mobile mechanics create professional inspection reports, breakdown reports and repair reports with clear photo evidence customers can understand.
+      </p>
+
+      <p>
+        Designed for workshop floors, roadside inspections, and mobile mechanics — even without internet connection.
+      </p>
+
+     <ul>
+  <li>Routine servicing</li>
+  <li>Brake & suspension inspections</li>
+  <li>Roadworthy checks</li>
+  <li>Pre-purchase inspections</li>
+  <li>Condition reports</li>
+  <li>Breakdown callouts</li>
+  <li>Repair documentation</li>
+</ul>
+    </div>
+
+    <div>
+      <img src="images/automotive-screenshot.png" alt="Automotive workshop inspection screenshot">
+    </div>
+  </div>
+</section>
+
+<section id="heavy" class="section-alt">
+
+<div class="container grid">
+
+<div class="heavy-image">
+<img src="images/heavy-screenshot.png" alt="Heavy vehicle and machinery inspection screenshot">
+</div>
+
+<div class="heavy-text">
+      <h2>For Heavy Vehicle & Machinery Mechanics</h2>
+
+      <p>
+InspectEquip makes it easy to create inspection reports, breakdown reports and repair reports for heavy vehicles, equipment and machinery with photo evidence and professional PDF reports.
+      </p>
+
+      <p>
+        Built for field work and remote job sites where internet connection isn't always available. InspectEquip is optimised for offline use with inspection data stored locally on your device.
+      </p>
+
+      <ul>
+  <li>Fleet maintenance</li>
+  <li>Machinery condition reports</li>
+  <li>Pre-start inspections</li>
+  <li>Equipment inspections</li>
+  <li>Compliance documentation</li>
+  <li>Breakdown reporting</li>
+  <li>Repair documentation</li>
+</ul>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+
+    <h2>One App. Three Reporting Workflows.</h2>
+
+    <div class="features">
+
+      <div class="feature-box">
+        <h3>Inspection Reports</h3>
+        <p>Perform structured inspections using built-in or custom checklists.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>Breakdown Reports</h3>
+        <p>Document faults, failures and field callouts with photo evidence and technician notes.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>Repair Reports</h3>
+        <p>Record completed repairs, work performed, technician findings and customer sign-off.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section id="features" class="section">
+  <div class="container">
+    <h2>Features</h2>
+
+    <div class="features">
+      <div class="feature-box">
+  <h3>Inspection Reports</h3>
+  <p>Perform structured inspections using built-in or custom checklists.</p>
+</div>
+
+<div class="feature-box">
+  <h3>Breakdown Reports</h3>
+  <p>Document breakdowns, faults and field callouts with professional reports.</p>
+</div>
+
+<div class="feature-box">
+  <h3>Repair Reports</h3>
+  <p>Record completed repairs, technician findings and work performed.</p>
+</div>
+      <div class="feature-box">
+        <h3>Photo Evidence</h3>
+        <p>Attach photos & notes directly to inspection items.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>Professional Reports</h3>
+        <p>Clear reports customers can understand.</p>
+      </div>
+
+      <div class="feature-box">
+        
+  <h3>Built-In & Custom Checklists</h3>
+  <p>Choose from over 25 built-in checklists covering vehicles, trailers, machinery and equipment, or create your own from scratch.</p>
+</div>
+
+      <div class="feature-box">
+        <h3>Inspection Records</h3>
+        <p>All inspections stored in one place.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>Built for Mobile</h3>
+        <p>Designed for phones and tablets in the workshop or field.</p>
+      </div>
+      <div class="feature-box">
+<h3>Designed for One-Handed Use</h3>
+<p>Simple navigation makes it easy to complete inspections while working on vehicles or machinery.</p>
+</div>
+   <div class="feature-box">
+<h3>Offline First*. Your Data Stays With You.</h3>
+<p>
+InspectEquip works without internet connection and stores inspection data locally on your device. No remote servers storing your inspection data.
+</p>
+     <p style="font-size:13px; color:#666; margin-top:10px;">
+* Internet connection required occasionally to verify your subscription.
+</p>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <h2>InspectEquip vs Paper Inspections</h2>
+
+    <table class="comparison">
+      <tr>
+        <th></th>
+        <th>Paper</th>
+        <th>InspectEquip</th>
+      </tr>
+
+      <tr>
+        <td>Photo Evidence</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+
+      <tr>
+        <td>Professional Reports</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+
+      <tr>
+        <td>Report History</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+
+      <tr>
+        <td>Easy Sharing</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+
+      <tr>
+        <td>Custom Checklists</td>
+        <td>❌</td>
+        <td>✅</td>
+      </tr>
+    </table>
+  <p class="comparison-caption">
+InspectEquip combines the simplicity of paper with the power of digital inspections — professional reports, photo evidence, and report history, while your data stays stored locally on your device.
+</p>
+  </div>
+</section>
+
+<!-- SAMPLE REPORT -->
+
+<section class="section">
+
+<div class="container">
+
+<h2>Sample Inspection Report</h2>
+
+<p>See what your customers will see.</p>
+
+<div class="report-slider">
+
+<div class="slides">
+<img src="images/report1.png" class="slide active" onclick="handleReportClick(this.src)">
+<img src="images/report2.png" class="slide" onclick="handleReportClick(this.src)">
+<img src="images/report3.png" class="slide" onclick="handleReportClick(this.src)">
+</div>
+
+<div class="slider-dots">
+<span class="dot active" onclick="showSlide(0)"></span>
+<span class="dot" onclick="showSlide(1)"></span>
+<span class="dot" onclick="showSlide(2)"></span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- PRICING -->
+
+<section id="pricing" class="section-alt">
+  <div class="container">
+    <h2>Simple Monthly Plans</h2>
+
+    <p>Start with a 14-day free trial. No accounts to create.</p>
+
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <h3>Solo</h3>
+        <p>For one mechanic or technician.</p>
+        <div class="price">AUD $29.99 <span>/ month</span></div>
+        <p>1 device</p>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Workshop</h3>
+        <p>For small workshops or mobile teams.</p>
+        <div class="price">AUD $69.99 <span>/ month</span></div>
+        <p>3 devices</p>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Team</h3>
+        <p>For larger teams and field service businesses.</p>
+        <div class="price">AUD $109.99 <span>/ month</span></div>
+        <p>5 devices</p>
+      </div>
+
+    </div>
+
+    <p class="pricing-note">
+      Prices shown in Australian Dollars. Local pricing may vary by country and platform.
+      Subscriptions are managed through the Apple App Store or Google Play.
+    </p>
+  </div>
+</section>
+
+<!-- DOWNLOAD / CTA -->
+
+<section id="download" class="cta">
+
+<h2>Replace paperwork with a smarter workflow.</h2>
+  
+<p>
+Create inspection reports, breakdown reports and repair reports directly from your phone or tablet.
+</p>
+
+<div class="download-buttons">
+
+<a href="https://apps.apple.com/app/id6761047977" target="_blank" rel="noopener">
+  <img src="images/app-store-badge.png" alt="Download on the App Store">
+</a>
+
+<a href="https://play.google.com/store/apps/details?id=com.inspectequip.app" target="_blank" rel="noopener">
+  <img src="images/google-play-badge.png" alt="Get it on Google Play">
+</a>
+
+</div>
+  <p style="margin-top:15px; color:#666;">
+Available now on the App Store and Google Play.
+  </p>
+
+</section>
+
+<section id="contact" class="section">
+  <div class="container contact-section">
+    <h2>Contact us</h2>
+
+    <p class="contact-intro">
+      Want to learn more about InspectEquip? Send us a message and we’ll get back to you.
+    </p>
+
+    <form class="contact-form" action="https://formspree.io/f/xwvrvlvy" method="POST">
+      
+      <input type="hidden" name="form_loaded_at" id="form_loaded_at">
+      <input type="hidden" name="_subject" value="New InspectEquip Contact Form Submission">
+      <input type="hidden" name="source" value="InspectEquip Website">
+      <input type="hidden" name="_next" value="https://inspectequip.com/thanks.html">
+      
+      <div style="position:absolute; left:-9999px; opacity:0;" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="business">Business</label>
+          <input type="text" id="business" name="business" placeholder="Workshop or business name" autocomplete="organization">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your email" autocomplete="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" name="phone" placeholder="Your phone number" autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Tell us a bit about your workshop or what you'd like to know." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+
+<p><strong>InspectEquip</strong></p>
+
+<p style="margin-top:10px;">
+© 2026 Vortech Mechanical Services Pty. Ltd.
+</p>
+
+<p style="margin-top:10px; font-size:14px; color:#666;">
+InspectEquip is a software application operated by Vortech Mechanical Services Pty. Ltd. (ACN 655 628 050).
+</p>
+
+<p style="margin-top:15px; font-size:14px;">
+  <a href="https://inspectequip.com/help.html">App Help</a> |
+<a href="https://inspectequip.com/privacy.html">Privacy Policy</a> |
+<a href="https://inspectequip.com/terms.html">Terms of Use</a> |
+<a href="https://inspectequip.com/disclaimer.html">Disclaimer</a> |
+<a href="mailto:support@inspectequip.com">Support</a>
+
+</p>
+
+</footer>
+<script>
+let currentSlide = 0;
+
+function showSlide(index){
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+
+  if (!slides.length) return;
+
+  if (index < 0) index = slides.length - 1;
+  if (index >= slides.length) index = 0;
+
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+
+  slides[index].classList.add('active');
+  dots[index].classList.add('active');
+
+  currentSlide = index;
+}
+
+function handleReportClick(src){
+  if (window.innerWidth > 900) {
+    openLightbox(src);
+  }
+}
+
+function openLightbox(src){
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+
+  img.src = src;
+  lightbox.style.display = 'flex';
+}
+
+function closeLightbox(){
+  document.getElementById('lightbox').style.display = 'none';
+}
+
+const slidesContainer = document.querySelector('.slides');
+
+if (slidesContainer) {
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  slidesContainer.addEventListener('touchstart', function(e){
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  slidesContainer.addEventListener('touchend', function(e){
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe(){
+    const swipeDistance = touchEndX - touchStartX;
+
+    if (Math.abs(swipeDistance) < 40) return;
+
+    if (swipeDistance < 0) {
+      showSlide(currentSlide + 1);
+    } else {
+      showSlide(currentSlide - 1);
+    }
+  }
+}
+</script>
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" alt="Expanded inspection report preview">
+</div>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const field = document.getElementById("form_loaded_at");
+  if(field){
+    field.value = Date.now();
+  }
+
+  const form = document.querySelector(".contact-form");
+  if(form){
+    form.addEventListener("submit", function(e){
+      const loaded = parseInt(document.getElementById("form_loaded_at").value, 10);
+      const now = Date.now();
+
+      if(now - loaded < 3000){ // less than 3 seconds
+        e.preventDefault();
+        alert("Submission blocked. Please try again.");
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>
