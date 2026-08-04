@@ -141,222 +141,62 @@ header{
 /* HERO */
 
 .hero{
-  background:#f5f6f7;
-  padding:70px 20px 35px;
+  background:white;
+  text-align:center;
+  padding:120px 20px;
 }
 
-.hero-card{
-  max-width:1100px;
-  margin:auto;
-  background:#fff;
-  border:1px solid #e8e8e8;
-  border-radius:18px;
-  box-shadow:0 16px 40px rgba(0,0,0,0.07);
-  padding:55px;
-  display:grid;
-  grid-template-columns:minmax(0,1.1fr) minmax(280px,0.9fr);
-  gap:55px;
-  align-items:center;
-}
-
-.hero-content{
-  text-align:left;
-}
-
-.hero-brand{
-  max-width:300px;
-  width:100%;
+.hero img{
+  max-width:100%;
   height:auto;
   display:block;
-  margin:0 0 30px;
+  margin:0 auto 40px auto;
 }
 
 .hero h1{
   font-size:44px;
-  line-height:1.15;
-  margin:0 0 22px;
-  color:#222;
+  line-height:1.2;
+  margin:0 0 20px 0;
 }
 
-.hero-intro{
+.hero p{
   font-size:19px;
-  color:#4f4f4f;
-  margin:0 0 16px;
+  max-width:700px;
+  margin:0 auto 16px auto;
 }
 
-.hero-highlight{
-  font-size:17px;
-  color:#555;
-  margin:0 0 24px;
+.hero-buttons{
+  margin-top:35px;
+  margin-bottom:40px;
 }
 
-.hero-benefits{
-  list-style:none;
-  padding:0;
-  margin:26px 0;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px 18px;
-}
-
-.hero-benefits li{
-  position:relative;
-  padding-left:25px;
-  color:#444;
-  font-weight:500;
-}
-
-.hero-benefits li::before{
-  content:"✓";
-  position:absolute;
-  left:0;
-  top:0;
-  font-weight:800;
+.btn-primary{
+  background:#F2C94C;
   color:#333;
+  padding:15px 30px;
+  border:none;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+  font-size:15px;
 }
 
-.hero-tagline{
-  margin:24px 0 4px;
-  font-weight:700;
-  color:#333;
+.btn-secondary{
+  background:#333;
+  color:white;
+  padding:15px 30px;
+  border:none;
+  border-radius:6px;
+  margin-left:10px;
+  cursor:pointer;
+  font-size:15px;
 }
 
-.hero-trial{
-  margin:0 0 24px;
-  font-weight:700;
-  font-size:18px;
-  color:#222;
-}
-
-.hero-actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  align-items:center;
-}
-
-.hero-actions .btn-primary,
-.hero-actions .btn-secondary{
-  margin:0;
-  text-decoration:none;
-  display:inline-block;
-  box-sizing:border-box;
-}
-
-.hero-store-buttons{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-top:26px;
-}
-
-.hero-store-buttons img{
-  height:54px;
-  width:auto;
-  display:block;
-  transition:transform 0.15s ease;
-}
-
-.hero-store-buttons img:hover{
-  transform:scale(1.04);
-}
-
-.hero-media{
-  display:flex;
-  justify-content:center;
-}
-
-.hero-video-shell{
-  width:100%;
-  max-width:350px;
-  background:#111;
-  border-radius:24px;
-  padding:10px;
-  box-shadow:0 18px 45px rgba(0,0,0,0.18);
-}
-
-.hero-video-shell video{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:17px;
-  background:#000;
-}
-
-.hero-video-caption{
-  text-align:center;
+.hero-features{
+  margin:0 auto;
   color:#666;
-  font-size:14px;
-  margin:14px 0 0;
-}
-
-@media(max-width:900px){
-  .hero{
-    padding:45px 18px 25px;
-  }
-
-  .hero-card{
-    grid-template-columns:1fr;
-    padding:38px 28px;
-    gap:38px;
-  }
-
-  .hero-content{
-    text-align:center;
-  }
-
-  .hero-brand{
-    margin:0 auto 28px;
-  }
-
-  .hero-benefits{
-    max-width:520px;
-    margin-left:auto;
-    margin-right:auto;
-    text-align:left;
-  }
-
-  .hero-actions,
-  .hero-store-buttons{
-    justify-content:center;
-  }
-
-  .hero-media{
-    order:initial;
-    margin-top:8px;
-  }
-
-  .hero-video-shell{
-    max-width:310px;
-  }
-}
-
-@media(max-width:640px){
-  .hero-card{
-    padding:28px 20px;
-    border-radius:14px;
-  }
-
-  .hero h1{
-    font-size:34px;
-  }
-
-  .hero-intro{
-    font-size:17px;
-  }
-
-  .hero-benefits{
-    grid-template-columns:1fr;
-  }
-
-  .hero-store-buttons{
-    flex-direction:column;
-    align-items:center;
-  }
-
-  .hero-store-buttons img{
-    height:52px;
-  }
+  font-size:15px;
+  line-height:1.8;
 }
 
 /* SECTIONS */
@@ -788,6 +628,14 @@ order:2;
 }
 
 @media (max-width:640px){
+  .hero{
+    padding:90px 20px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
   .btn-primary,
   .btn-secondary{
     width:100%;
@@ -832,70 +680,38 @@ order:2;
 </header>
 
 <section class="hero">
-  <div class="hero-card">
+  <h1>Inspections, Service Reports, Breakdown Reports & Repair Reports.</h1>
 
-    <div class="hero-content">
-      <img
-        src="images/InspectEquipForWhiteBG.png"
-        alt="InspectEquip"
-        class="hero-brand"
-      >
+<p>
+InspectEquip™ helps mechanics create professional inspection reports, service reports, breakdown reports and repair reports directly from their phone or tablet.
+</p>
 
-      <h1>Inspections, Service Reports, Breakdown Reports &amp; Repair Reports.</h1>
+<p>
+Capture photos, mark up defects with arrows, circles and drawings, collect signatures and generate customer-ready PDF reports in minutes.
+</p>
 
-      <p class="hero-intro">
-        InspectEquip™ helps mechanics create professional inspection reports,
-        service reports, breakdown reports and repair reports directly from
-        their phone or tablet.
-      </p>
+<p><strong>Built by a mechanic. Built for mechanics.</strong></p>
 
-      <p class="hero-highlight">
-        Capture photos, mark up defects with arrows, circles and drawings,
-        collect signatures and generate customer-ready PDF reports in minutes.
-      </p>
+<p><strong>Start your free trial today.</strong></p>
 
-      <ul class="hero-benefits">
-        <li>Photo evidence and image annotation</li>
-        <li>Professional PDF reports</li>
-        <li>Digital signatures</li>
-        <li>Works offline</li>
-      </ul>
+<div class="download-buttons">
 
-      <p class="hero-tagline">Built by a mechanic. Built for mechanics.</p>
-      <p class="hero-trial">Start your 14-day free trial today.</p>
+<a href="https://apps.apple.com/app/id6761047977" target="_blank" rel="noopener">
+  <img src="images/app-store-badge.png" alt="Download on the App Store">
+</a>
 
-      <div class="hero-actions">
-        <a class="btn-secondary" href="#video">Watch Demo</a>
-        <a class="btn-primary" href="#pricing">View Pricing</a>
-      </div>
+<a href="https://play.google.com/store/apps/details?id=com.inspectequip.app" target="_blank" rel="noopener">
+  <img src="images/google-play-badge.png" alt="Get it on Google Play">
+</a>
 
-      <div class="hero-store-buttons">
-        <a href="https://apps.apple.com/app/id6761047977" target="_blank" rel="noopener">
-          <img src="images/app-store-badge.png" alt="Download on the App Store">
-        </a>
+</div>
 
-        <a href="https://play.google.com/store/apps/details?id=com.inspectequip.app" target="_blank" rel="noopener">
-          <img src="images/google-play-badge.png" alt="Get it on Google Play">
-        </a>
-      </div>
-    </div>
+<div class="hero-buttons">
 
-    <div class="hero-media">
-      <div>
-        <div class="hero-video-shell">
-          <video autoplay muted loop playsinline controls>
-            <source src="images/image-annotation1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
+<a class="btn-secondary" href="#video">Watch Demo</a>
 
-        <p class="hero-video-caption">
-          Highlight defects directly on photos before adding them to the report.
-        </p>
-      </div>
-    </div>
+</div>
 
-  </div>
 </section>
 
 <section class="section">
@@ -1082,3 +898,4 @@ Built for field work and remote job sites where an internet connection isn't alw
 
 <h2>One App. Four Reporting Workflows.</h2>
     <div class="features">
+
