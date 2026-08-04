@@ -141,62 +141,221 @@ header{
 /* HERO */
 
 .hero{
-  background:white;
-  text-align:center;
-  padding:120px 20px;
+  background:#f5f6f7;
+  padding:70px 20px 35px;
 }
 
-.hero img{
-  max-width:100%;
+.hero-card{
+  max-width:1100px;
+  margin:auto;
+  background:#fff;
+  border:1px solid #e8e8e8;
+  border-radius:18px;
+  box-shadow:0 16px 40px rgba(0,0,0,0.07);
+  padding:55px;
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(280px,0.9fr);
+  gap:55px;
+  align-items:center;
+}
+
+.hero-content{
+  text-align:left;
+}
+
+.hero-brand{
+  max-width:300px;
+  width:100%;
   height:auto;
   display:block;
-  margin:0 auto 40px auto;
+  margin:0 0 30px;
 }
 
 .hero h1{
   font-size:44px;
-  line-height:1.2;
-  margin:0 0 20px 0;
+  line-height:1.15;
+  margin:0 0 22px;
+  color:#222;
 }
 
-.hero p{
+.hero-intro{
   font-size:19px;
-  max-width:700px;
-  margin:0 auto 16px auto;
+  color:#4f4f4f;
+  margin:0 0 16px;
 }
 
-.hero-buttons{
-  margin-top:35px;
-  margin-bottom:40px;
+.hero-highlight{
+  font-size:17px;
+  color:#555;
+  margin:0 0 24px;
 }
 
-.btn-primary{
-  background:#F2C94C;
+.hero-benefits{
+  list-style:none;
+  padding:0;
+  margin:26px 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px 18px;
+}
+
+.hero-benefits li{
+  position:relative;
+  padding-left:25px;
+  color:#444;
+  font-weight:500;
+}
+
+.hero-benefits li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  top:0;
+  font-weight:800;
   color:#333;
-  padding:15px 30px;
-  border:none;
-  border-radius:6px;
-  font-weight:600;
-  cursor:pointer;
-  font-size:15px;
 }
 
-.btn-secondary{
-  background:#333;
-  color:white;
-  padding:15px 30px;
-  border:none;
-  border-radius:6px;
-  margin-left:10px;
-  cursor:pointer;
-  font-size:15px;
+.hero-tagline{
+  margin:24px 0 4px;
+  font-weight:700;
+  color:#333;
 }
 
-.hero-features{
-  margin:0 auto;
+.hero-trial{
+  margin:0 0 24px;
+  font-weight:700;
+  font-size:18px;
+  color:#222;
+}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.hero-actions .btn-primary,
+.hero-actions .btn-secondary{
+  margin:0;
+  text-decoration:none;
+  display:inline-block;
+  box-sizing:border-box;
+}
+
+.hero-store-buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:26px;
+}
+
+.hero-store-buttons img{
+  height:54px;
+  width:auto;
+  display:block;
+  transition:transform 0.15s ease;
+}
+
+.hero-store-buttons img:hover{
+  transform:scale(1.04);
+}
+
+.hero-media{
+  display:flex;
+  justify-content:center;
+}
+
+.hero-video-shell{
+  width:100%;
+  max-width:350px;
+  background:#111;
+  border-radius:24px;
+  padding:10px;
+  box-shadow:0 18px 45px rgba(0,0,0,0.18);
+}
+
+.hero-video-shell video{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:17px;
+  background:#000;
+}
+
+.hero-video-caption{
+  text-align:center;
   color:#666;
-  font-size:15px;
-  line-height:1.8;
+  font-size:14px;
+  margin:14px 0 0;
+}
+
+@media(max-width:900px){
+  .hero{
+    padding:45px 18px 25px;
+  }
+
+  .hero-card{
+    grid-template-columns:1fr;
+    padding:38px 28px;
+    gap:38px;
+  }
+
+  .hero-content{
+    text-align:center;
+  }
+
+  .hero-brand{
+    margin:0 auto 28px;
+  }
+
+  .hero-benefits{
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+  }
+
+  .hero-actions,
+  .hero-store-buttons{
+    justify-content:center;
+  }
+
+  .hero-media{
+    order:-1;
+  }
+
+  .hero-video-shell{
+    max-width:310px;
+  }
+}
+
+@media(max-width:640px){
+  .hero-card{
+    padding:28px 20px;
+    border-radius:14px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .hero-intro{
+    font-size:17px;
+  }
+
+  .hero-benefits{
+    grid-template-columns:1fr;
+  }
+
+  .hero-store-buttons{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .hero-store-buttons img{
+    height:52px;
+  }
 }
 
 /* SECTIONS */
@@ -628,14 +787,6 @@ order:2;
 }
 
 @media (max-width:640px){
-  .hero{
-    padding:90px 20px;
-  }
-
-  .hero p{
-    font-size:17px;
-  }
-
   .btn-primary,
   .btn-secondary{
     width:100%;
@@ -680,40 +831,70 @@ order:2;
 </header>
 
 <section class="hero">
-  <img src="images/homehero.png" alt="InspectEquip app preview">
+  <div class="hero-card">
 
-<h1>Inspections, Service Reports, Breakdown Reports & Repair Reports.</h1>
+    <div class="hero-content">
+      <img
+        src="images/InspectEquipForWhiteBG.png"
+        alt="InspectEquip"
+        class="hero-brand"
+      >
 
-<p>
-InspectEquip™ helps mechanics create professional inspection reports, service reports, breakdown reports and repair reports directly from their phone or tablet.
-</p>
+      <h1>Inspections, Service Reports, Breakdown Reports &amp; Repair Reports.</h1>
 
-<p>
-Capture photos, mark up defects with arrows, circles and drawings, collect signatures and generate customer-ready PDF reports in minutes.
-</p>
+      <p class="hero-intro">
+        InspectEquip™ helps mechanics create professional inspection reports,
+        service reports, breakdown reports and repair reports directly from
+        their phone or tablet.
+      </p>
 
-<p><strong>Built by a mechanic. Built for mechanics.</strong></p>
+      <p class="hero-highlight">
+        Capture photos, mark up defects with arrows, circles and drawings,
+        collect signatures and generate customer-ready PDF reports in minutes.
+      </p>
 
-<p><strong>Start your free trial today.</strong></p>
+      <ul class="hero-benefits">
+        <li>Photo evidence and image annotation</li>
+        <li>Professional PDF reports</li>
+        <li>Digital signatures</li>
+        <li>Works offline</li>
+      </ul>
 
-<div class="download-buttons">
+      <p class="hero-tagline">Built by a mechanic. Built for mechanics.</p>
+      <p class="hero-trial">Start your 14-day free trial today.</p>
 
-<a href="https://apps.apple.com/app/id6761047977" target="_blank" rel="noopener">
-  <img src="images/app-store-badge.png" alt="Download on the App Store">
-</a>
+      <div class="hero-actions">
+        <a class="btn-secondary" href="#video">Watch Demo</a>
+        <a class="btn-primary" href="#pricing">View Pricing</a>
+      </div>
 
-<a href="https://play.google.com/store/apps/details?id=com.inspectequip.app" target="_blank" rel="noopener">
-  <img src="images/google-play-badge.png" alt="Get it on Google Play">
-</a>
+      <div class="hero-store-buttons">
+        <a href="https://apps.apple.com/app/id6761047977" target="_blank" rel="noopener">
+          <img src="images/app-store-badge.png" alt="Download on the App Store">
+        </a>
 
-</div>
+        <a href="https://play.google.com/store/apps/details?id=com.inspectequip.app" target="_blank" rel="noopener">
+          <img src="images/google-play-badge.png" alt="Get it on Google Play">
+        </a>
+      </div>
+    </div>
 
-<div class="hero-buttons">
+    <div class="hero-media">
+      <div>
+        <div class="hero-video-shell">
+          <video autoplay muted loop playsinline controls>
+            <source src="images/image-annotation1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
-<a class="btn-secondary" href="#video">Watch Demo</a>
+        <p class="hero-video-caption">
+          Highlight defects directly on photos before adding them to the report.
+        </p>
+      </div>
+    </div>
 
-</div>
-
+  </div>
 </section>
 
 <section class="section">
@@ -850,7 +1031,6 @@ InspectEquip helps automotive workshops and mobile mechanics create professional
      <ul>
   <li>Routine servicing</li>
   <li>Brake & suspension inspections</li>
-  <li>Roadworthy checks</li>
   <li>Pre-purchase inspections</li>
   <li>Condition reports</li>
   <li>Breakdown callouts</li>
@@ -902,552 +1082,3 @@ Built for field work and remote job sites where an internet connection isn't alw
 <h2>One App. Four Reporting Workflows.</h2>
     <div class="features">
 
-      <div class="feature-box">
-        <h3>Inspection Reports</h3>
-        <p>Perform structured inspections using built-in or custom checklists.</p>
-      </div>
-<div class="feature-box">
-  <h3>Service Reports</h3>
-  <p>Record routine servicing, service items, work performed and service summaries.</p>
-</div>
-      <div class="feature-box">
-        <h3>Breakdown Reports</h3>
-        <p>Document faults, failures and field callouts with photo evidence and technician notes.</p>
-      </div>
-
-      <div class="feature-box">
-        <h3>Repair Reports</h3>
-        <p>Record completed repairs, work performed, technician findings and customer sign-off.</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-<section id="features" class="section">
-  <div class="container">
-    <h2>Features</h2>
-
-    <div class="features">
-      <div class="feature-box">
-  <h3>Inspection Reports</h3>
-  <p>Perform structured inspections using built-in or custom checklists.</p>
-</div>
-<div class="feature-box">
-  <h3>Service Reports</h3>
-  <p>Record service items, completed work, technician notes and service summaries.</p>
-</div>
-<div class="feature-box">
-  <h3>Breakdown Reports</h3>
-  <p>Document breakdowns, faults and field callouts with professional reports.</p>
-</div>
-
-<div class="feature-box">
-  <h3>Repair Reports</h3>
-  <p>Record completed repairs, technician findings and work performed.</p>
-</div>
-      <div class="feature-box">
-        <h3>Photo Evidence & Image Annotation</h3>
-        <p>Attach photos and highlight defects with arrows, circles, drawings and notes before adding them to the report.</p>
-      </div>
-
-      <div class="feature-box">
-        <h3>Professional Reports</h3>
-        <p>Clear reports customers can understand.</p>
-      </div>
-
-      <div class="feature-box">
-        
-  <h3>Built-In & Custom Checklists</h3>
-  <p>Choose from over 25 built-in checklists covering vehicles, trailers, machinery and equipment, or create your own from scratch.</p>
-</div>
-
-      <div class="feature-box">
-       <h3>Report History</h3>
-<p>Keep inspection, service, breakdown and repair reports organised in one place.</p>
-      </div>
-
-      <div class="feature-box">
-        <h3>Built for Mobile</h3>
-        <p>Designed for phones and tablets in the workshop or field.</p>
-      </div>
-      <div class="feature-box">
-<h3>Designed for One-Handed Use</h3>
-<p>Simple navigation makes it easy to complete reports while working on vehicles or machinery.</p></div>
-   <div class="feature-box">
-<h3>Offline First*. Your Data Stays With You.</h3>
-<p>
-InspectEquip works without an internet connection and stores customer, vehicle and report data locally on your device. No remote servers routinely storing your report data.
-</p>
-     <p style="font-size:13px; color:#666; margin-top:10px;">
-* Internet connection required occasionally to verify your subscription.
-</p>
-</div>
-    </div>
-  </div>
-</section>
-
-<section class="section-alt">
-  <div class="container">
-    <h2>InspectEquip vs Paper Inspections</h2>
-
-    <table class="comparison">
-      <tr>
-        <th></th>
-        <th>Paper</th>
-        <th>InspectEquip</th>
-      </tr>
-
-      <tr>
-        <td>Photo Evidence</td>
-        <td>❌</td>
-        <td>✅</td>
-      </tr>
-
-      <tr>
-        <td>Image Annotation</td>
-        <td>❌</td>
-        <td>✅</td>
-      </tr>
-
-      <tr>
-        <td>Professional Reports</td>
-        <td>❌</td>
-        <td>✅</td>
-      </tr>
-
-      <tr>
-        <td>Report History</td>
-        <td>❌</td>
-        <td>✅</td>
-      </tr>
-
-      <tr>
-        <td>Easy Sharing</td>
-        <td>❌</td>
-        <td>✅</td>
-      </tr>
-
-      <tr>
-        <td>Custom Checklists</td>
-        <td>❌</td>
-        <td>✅</td>
-      </tr>
-    </table>
-  <p class="comparison-caption">
-InspectEquip combines the simplicity of paper with the power of digital reporting — professional reports, photo evidence, image annotation and report history, while your data stays stored locally on your device.
-</p>
-  </div>
-</section>
-
-<!-- SAMPLE REPORT -->
-
-<section class="section">
-
-<div class="container">
-
-<h2>Sample Inspection Report</h2>
-
-<p>See what your customers will see.</p>
-
-<div class="report-slider">
-
-<div class="slides">
-<img src="images/report1.png" class="slide active" onclick="handleReportClick(this.src)">
-<img src="images/report2.png" class="slide" onclick="handleReportClick(this.src)">
-<img src="images/report3.png" class="slide" onclick="handleReportClick(this.src)">
-  <img src="images/report4.png" class="slide" onclick="handleReportClick(this.src)">
-</div>
-
-<div class="slider-dots">
-<span class="dot active" onclick="showSlide(0)"></span>
-<span class="dot" onclick="showSlide(1)"></span>
-<span class="dot" onclick="showSlide(2)"></span>
-</div>
-
-</div>
-<div style="text-align:center; margin-top:25px;">
-  <a
-    class="btn-secondary"
-    href="https://inspectequip.com/inspectionsample.pdf"
-    download
-  >
-    Download Sample Report
-  </a>
-</div>
-</div>
-
-</section>
-
-
-
-
-<!-- PRICING -->
-
-<section id="pricing" class="section-alt">
-  <div class="container">
-    <h2>Simple Monthly Plans</h2>
-
-    <p>Start with a 14-day free trial. No accounts to create.</p>
-
-    <div class="currency-selector">
-      <label for="currency-select">Display prices in:</label>
-
-      <select id="currency-select">
-        <option value="AUD">AUD — Australian Dollar</option>
-        <option value="USD">USD — US Dollar</option>
-        <option value="NZD">NZD — New Zealand Dollar</option>
-        <option value="GBP">GBP — British Pound</option>
-        <option value="CAD">CAD — Canadian Dollar</option>
-        <option value="EUR">EUR — Euro</option>
-      </select>
-    </div>
-
-    <div class="pricing-grid">
-
-      <div class="pricing-card">
-        <h3>Solo</h3>
-        <p>For one mechanic or technician.</p>
-        <div class="price converted-price" data-aud-price="29.99">AUD $29.99 <span>/ month</span></div>
-        <p>1 device</p>
-      </div>
-
-      <div class="pricing-card">
-        <h3>Workshop</h3>
-        <p>For small workshops or mobile teams.</p>
-        <div class="price converted-price" data-aud-price="69.99">AUD $69.99 <span>/ month</span></div>
-        <p>3 devices</p>
-      </div>
-
-      <div class="pricing-card">
-        <h3>Team</h3>
-        <p>For larger teams and field service businesses.</p>
-        <div class="price converted-price" data-aud-price="109.99">AUD $109.99 <span>/ month</span></div>
-        <p>5 devices</p>
-      </div>
-
-    </div>
-
-    <p class="pricing-note">
-      <span id="currency-note">Prices shown in Australian Dollars.</span>
-      Final prices may vary by country, taxes and platform. Subscriptions are managed through the Apple App Store or Google Play.
-    </p>
-  </div>
-</section>
-
-<!-- DOWNLOAD / CTA -->
-
-<section id="download" class="cta">
-
-<h2>Replace paperwork with a smarter workflow.</h2>
-  
-<p>
-Create inspection, service, breakdown and repair reports with photos, image annotations and professional PDFs directly from your phone or tablet.
-</p>
-
-<div class="download-buttons">
-
-<a href="https://apps.apple.com/app/id6761047977" target="_blank" rel="noopener">
-  <img src="images/app-store-badge.png" alt="Download on the App Store">
-</a>
-
-<a href="https://play.google.com/store/apps/details?id=com.inspectequip.app" target="_blank" rel="noopener">
-  <img src="images/google-play-badge.png" alt="Get it on Google Play">
-</a>
-
-</div>
-  <p style="margin-top:15px; color:#666;">
-Available now on the App Store and Google Play.
-  </p>
-
-</section>
-
-<section id="contact" class="section">
-  <div class="container contact-section">
-    <h2>Contact us</h2>
-
-    <p class="contact-intro">
-      Want to learn more about InspectEquip? Send us a message and we’ll get back to you.
-    </p>
-
-    <form class="contact-form" action="https://formspree.io/f/xwvrvlvy" method="POST">
-      
-      <input type="hidden" name="form_loaded_at" id="form_loaded_at">
-      <input type="hidden" name="_subject" value="New InspectEquip Contact Form Submission">
-      <input type="hidden" name="source" value="InspectEquip Website">
-      <input type="hidden" name="_next" value="https://inspectequip.com/thanks.html">
-      
-      <div style="position:absolute; left:-9999px; opacity:0;" aria-hidden="true">
-        <label for="website">Website</label>
-        <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="business">Business</label>
-          <input type="text" id="business" name="business" placeholder="Workshop or business name" autocomplete="organization">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your email" autocomplete="email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="text" id="phone" name="phone" placeholder="Your phone number" autocomplete="tel">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" placeholder="Tell us a bit about your workshop or what you'd like to know." required></textarea>
-      </div>
-
-      <button type="submit" class="btn-primary">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-
-<p><strong>InspectEquip</strong></p>
-
-<p style="margin-top:10px;">
-© 2026 Vortech Mechanical Services Pty. Ltd.
-</p>
-
-<p style="margin-top:10px; font-size:14px; color:#666;">
-InspectEquip is a software application operated by Vortech Mechanical Services Pty. Ltd. (ACN 655 628 050).
-</p>
-
-<p style="margin-top:15px; font-size:14px;">
-  <a href="https://inspectequip.com/help.html">App Help</a> |
-<a href="https://inspectequip.com/privacy.html">Privacy Policy</a> |
-<a href="https://inspectequip.com/terms.html">Terms of Use</a> |
-<a href="https://inspectequip.com/disclaimer.html">Disclaimer</a> |
-<a href="mailto:support@inspectequip.com">Support</a>
-
-</p>
-
-</footer>
-<script>
-let currentSlide = 0;
-
-function showSlide(index){
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.dot');
-
-  if (!slides.length) return;
-
-  if (index < 0) index = slides.length - 1;
-  if (index >= slides.length) index = 0;
-
-  slides.forEach(slide => slide.classList.remove('active'));
-  dots.forEach(dot => dot.classList.remove('active'));
-
-  slides[index].classList.add('active');
-  dots[index].classList.add('active');
-
-  currentSlide = index;
-}
-
-function handleReportClick(src){
-  if (window.innerWidth > 900) {
-    openLightbox(src);
-  }
-}
-
-function openLightbox(src){
-  const lightbox = document.getElementById('lightbox');
-  const img = document.getElementById('lightbox-img');
-
-  img.src = src;
-  lightbox.style.display = 'flex';
-}
-
-function closeLightbox(){
-  document.getElementById('lightbox').style.display = 'none';
-}
-
-const slidesContainer = document.querySelector('.slides');
-
-if (slidesContainer) {
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  slidesContainer.addEventListener('touchstart', function(e){
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-
-  slidesContainer.addEventListener('touchend', function(e){
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
-
-  function handleSwipe(){
-    const swipeDistance = touchEndX - touchStartX;
-
-    if (Math.abs(swipeDistance) < 40) return;
-
-    if (swipeDistance < 0) {
-      showSlide(currentSlide + 1);
-    } else {
-      showSlide(currentSlide - 1);
-    }
-  }
-}
-</script>
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" alt="Expanded inspection report preview">
-</div>
-  <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const field = document.getElementById("form_loaded_at");
-  if(field){
-    field.value = Date.now();
-  }
-
-  const form = document.querySelector(".contact-form");
-  if(form){
-    form.addEventListener("submit", function(e){
-      const loaded = parseInt(document.getElementById("form_loaded_at").value, 10);
-      const now = Date.now();
-
-      if(now - loaded < 3000){ // less than 3 seconds
-        e.preventDefault();
-        alert("Submission blocked. Please try again.");
-      }
-    });
-  }
-});
-</script>
-
-<script>
-const currencySelect = document.getElementById("currency-select");
-const priceElements = document.querySelectorAll(".converted-price");
-const currencyNote = document.getElementById("currency-note");
-
-const currencyLocales = {
-  AUD: "en-AU",
-  USD: "en-US",
-  NZD: "en-NZ",
-  GBP: "en-GB",
-  CAD: "en-CA",
-  EUR: "en-IE"
-};
-
-function formatCurrency(amount, currency) {
-  return new Intl.NumberFormat(currencyLocales[currency] || "en-AU", {
-    style: "currency",
-    currency: currency,
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  }).format(amount);
-}
-
-function displayAudPrices() {
-  priceElements.forEach(function(priceElement) {
-    const audPrice = Number(priceElement.dataset.audPrice);
-
-    priceElement.innerHTML =
-      "AUD " +
-      formatCurrency(audPrice, "AUD") +
-      " <span>/ month</span>";
-  });
-
-  if (currencyNote) {
-    currencyNote.textContent = "Prices shown in Australian Dollars.";
-  }
-}
-
-async function updatePrices(currency) {
-  if (!currencySelect || !priceElements.length) return;
-
-  if (currency === "AUD") {
-    displayAudPrices();
-    return;
-  }
-
-  currencySelect.disabled = true;
-
-  if (currencyNote) {
-    currencyNote.textContent = `Loading approximate ${currency} prices…`;
-  }
-
-  try {
-    const response = await fetch(
-      `https://api.frankfurter.dev/v2/rate/AUD/${currency}`
-    );
-
-    if (!response.ok) {
-      throw new Error(`Currency request failed: ${response.status}`);
-    }
-
-    const data = await response.json();
-    const exchangeRate = Number(data.rate);
-
-    if (!Number.isFinite(exchangeRate)) {
-      throw new Error("Invalid exchange rate received");
-    }
-
-    priceElements.forEach(function(priceElement) {
-      const audPrice = Number(priceElement.dataset.audPrice);
-      const convertedPrice = audPrice * exchangeRate;
-
-      priceElement.innerHTML =
-        "Approx. " +
-        formatCurrency(convertedPrice, currency) +
-        " <span>/ month</span>";
-    });
-
-    if (currencyNote) {
-      currencyNote.textContent =
-        `Approximate ${currency} prices based on the latest available exchange rate.`;
-    }
-
-    localStorage.setItem("inspectequip_display_currency", currency);
-  } catch (error) {
-    console.error("Currency conversion failed:", error);
-
-    currencySelect.value = "AUD";
-    displayAudPrices();
-
-    if (currencyNote) {
-      currencyNote.textContent =
-        "Currency conversion is temporarily unavailable. Prices are shown in Australian Dollars.";
-    }
-  } finally {
-    currencySelect.disabled = false;
-  }
-}
-
-if (currencySelect) {
-  currencySelect.addEventListener("change", function() {
-    updatePrices(this.value);
-  });
-
-  const savedCurrency =
-    localStorage.getItem("inspectequip_display_currency");
-
-  if (
-    savedCurrency &&
-    Array.from(currencySelect.options).some(
-      option => option.value === savedCurrency
-    )
-  ) {
-    currencySelect.value = savedCurrency;
-    updatePrices(savedCurrency);
-  }
-}
-</script>
-
-</body>
-</html>
