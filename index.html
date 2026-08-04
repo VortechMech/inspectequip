@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta name="google-site-verification" content="yXBopTSJTGdJuGjvL56NG_aYqVHvQ56mfVxfFH70jRQ" />
@@ -26,637 +27,218 @@ img{
   height:auto;
 }
 
-.report-slider{
-  max-width:420px;
-  margin:40px auto 0;
-  text-align:center;
-}
+.report-slider{max-width:420px;margin:40px auto 0;text-align;}
 
-.slides{
-  position:relative;
-  touch-action:pan-y;
-}
+.slides{position;touch-action;}
 
-.slide{
-  display:none;
-  width:100%;
-  border-radius:10px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.12);
-  cursor:pointer;
-}
+.slide{display;width:100%;border-radius:10px;box-shadow:0 20px 40px rgba(0,0,0,0.12);cursor;}
 
-.slide.active{
-  display:block;
-}
+.slide.active{display;}
 
-.slider-dots{
-  margin-top:15px;
-}
+.slider-dots{margin-top:15px;}
 
-.dot{
-  height:10px;
-  width:10px;
-  margin:0 6px;
-  background:#ccc;
-  border-radius:50%;
-  display:inline-block;
-  cursor:pointer;
-}
+.dot{height:10px;width:10px;margin:0 6px;background:#ccc;border-radius:50%;display;cursor;}
 
-.dot.active{
-  background:#333;
-}
+.dot.active{background:#333;}
 
-.lightbox{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.85);
-  justify-content:center;
-  align-items:center;
-  z-index:2000;
-}
+.lightbox{display;position;inset:0;background(0,0,0,0.85);justify-content;align-items;z-index:2000;}
 
-.lightbox img{
-  max-width:90%;
-  max-height:90%;
-  border-radius:10px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.5);
-}
+.lightbox img{max-width:90%;max-height:90%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
 
-@media(max-width:900px){
-  .slide{
-    cursor:default;
-  }
-}
-
+@media(max-width:900px){.slide{cursor;}}
 
 /* CONTAINER */
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:70px 20px;
-}
+.container{max-width:1100px;margin;padding:70px 20px;}
 
 /* HEADER */
 
-header{
-  position:sticky;
-  top:0;
-  background:white;
-  border-bottom:1px solid #eee;
-  z-index:1000;
-}
+header{position;top:0;background;border-bottom:1px solid #eee;z-index:1000;}
 
-.nav{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 20px;
-}
+.nav{max-width:1200px;margin;display;align-items;justify-content;padding:14px 20px;}
 
-.logo img{
-  height:42px;
-}
+.logo img{height:42px;}
 
-.nav-links{
-  display:flex;
-  gap:30px;
-}
+.nav-links{display;gap:30px;}
 
-.nav-links a{
-  text-decoration:none;
-  color:#444;
-  font-weight:500;
-  font-size:15px;
-}
+.nav-links a{text-decoration;color:#444;font-weight:500;font-size:15px;}
 
-.nav-links a:hover{
-  color:#000;
-}
+.nav-links a
 
 /* HERO */
 
-.hero{
-  background:white;
-  text-align:center;
-  padding:120px 20px;
-}
+.hero{background;text-align;padding:120px 20px;}
 
-.hero img{
-  max-width:100%;
-  height:auto;
-  display:block;
-  margin:0 auto 40px auto;
-}
+.hero img{max-width:100%;height;display;margin:0 auto 40px auto;}
 
-.hero h1{
-  font-size:44px;
-  line-height:1.2;
-  margin:0 0 20px 0;
-}
+.hero h1{font-size:44px;line-height:1.2;margin:0 0 20px 0;}
 
-.hero p{
-  font-size:19px;
-  max-width:700px;
-  margin:0 auto 16px auto;
-}
+.hero p{font-size:19px;max-width:700px;margin:0 auto 16px auto;}
 
-.hero-buttons{
-  margin-top:35px;
-  margin-bottom:40px;
-}
+.hero-buttons{margin-top:35px;margin-bottom:40px;}
 
-.btn-primary{
-  background:#F2C94C;
-  color:#333;
-  padding:15px 30px;
-  border:none;
-  border-radius:6px;
-  font-weight:600;
-  cursor:pointer;
-  font-size:15px;
-}
+.btn-primary{background:#F2C94C;color:#333;padding:15px 30px;border;border-radius:6px;font-weight:600;cursor;font-size:15px;}
 
-.btn-secondary{
-  background:#333;
-  color:white;
-  padding:15px 30px;
-  border:none;
-  border-radius:6px;
-  margin-left:10px;
-  cursor:pointer;
-  font-size:15px;
-}
+.btn-secondary{background:#333;color;padding:15px 30px;border;border-radius:6px;margin-left:10px;cursor;font-size:15px;}
 
-.hero-features{
-  margin:0 auto;
-  color:#666;
-  font-size:15px;
-  line-height:1.8;
-}
+.hero-features{margin:0 auto;color:#666;font-size:15px;line-height:1.8;}
 
 /* SECTIONS */
 
- .download-buttons{
-display:flex;
-justify-content:center;
-gap:20px;
-margin-top:30px;
-flex-wrap:wrap;
-}
+.download-buttons{display;justify-content;gap:20px;margin-top:30px;flex-wrap;}
 
-.download-buttons img{
-  height:60px;
-  width:auto;
-  transition:transform 0.15s ease;
-}
+.download-buttons img{height:60px;width;transition 0.15s ease;}
 
-.download-buttons img:hover{
-  transform:scale(1.05);
-}
+.download-buttons img{transform(1.05);}
 
-.section{
-  background:white;
-  margin-top:40px;
-}
+.section{background;margin-top:40px;}
 
-#how,
-#features,
-#automotive,
-#pricing,
-#heavy,
-#contact{
-scroll-margin-top:100px;
-}
+#how,#features,#automotive,#pricing,#heavy,#contact{scroll-margin-top:100px;}
 
-.section-alt{
-  background:#f5f6f7;
-  margin-top:40px;
-}
+.section-alt{background:#f5f6f7;margin-top:40px;}
 
-h2{
-  font-size:30px;
-  margin:0 0 20px 0;
-  line-height:1.2;
-}
+h2{font-size:30px;margin:0 0 20px 0;line-height:1.2;}
 
-h3{
-  margin-top:0;
-  line-height:1.3;
-}
+h3{margin-top:0;line-height:1.3;}
 
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
-}
+.grid{display;grid-template-columns:1fr 1fr;gap:50px;align-items;}
 
 /* HOW IT WORKS */
 
-.how-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:25px;
-}
+.how-grid{display;grid-template-columns:1fr;gap:25px;}
 
-.feature-card{
-  background:#fafafa;
-  padding:24px;
-  border-radius:8px;
-  text-align:center;
-}
+.feature-card{background:#fafafa;padding:24px;border-radius:8px;text-align;}
 
-.feature-icon{
-  width:180px;
-  height:auto;
-  display:block;
-  margin:0 auto 24px auto;
-}
+.feature-icon{width:180px;height;display;margin:0 auto 24px auto;}
 
 /* GENERAL FEATURES */
 
-.features{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-}
+.features{display;grid-template-columns(auto-fit,minmax(220px,1fr));gap:25px;}
 
-.feature-box{
-  background:#fafafa;
-  padding:24px;
-  border-radius:10px;
-  transition:transform 0.2s ease, box-shadow 0.2s ease;
-}
+.feature-box{background:#fafafa;padding:24px;border-radius:10px;transition 0.2s ease, box-shadow 0.2s ease;}
 
-.feature-box:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 24px rgba(0,0,0,0.08);
-}
-
+.feature-box{transform(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.08);}
 
 /* CURRENCY SELECTOR */
 
-.currency-selector{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  margin:25px 0 5px;
-  flex-wrap:wrap;
-}
+.currency-selector{display;justify-content;align-items;gap:12px;margin:25px 0 5px;flex-wrap;}
 
-.currency-selector label{
-  font-weight:600;
-  color:#444;
-}
+.currency-selector label{font-weight:600;color:#444;}
 
-.currency-selector select{
-  padding:11px 14px;
-  border:1px solid #d9d9d9;
-  border-radius:8px;
-  background:#fff;
-  color:#333;
-  font:inherit;
-  cursor:pointer;
-}
+.currency-selector select{padding:11px 14px;border:1px solid #d9d9d9;border-radius:8px;background:#fff;color:#333;font;cursor;}
 
-.currency-selector select:focus{
-  outline:none;
-  border-color:#FFC700;
-  box-shadow:0 0 0 3px rgba(255,199,0,0.15);
-}
+.currency-selector select{outline;border-color:#FFC700;box-shadow:0 0 0 3px rgba(255,199,0,0.15);}
 
-.currency-selector select:disabled{
-  cursor:wait;
-  opacity:0.7;
-}
+.currency-selector select{cursor;opacity:0.7;}
 
 /* PRICING */
 
-.pricing-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-  margin-top:30px;
-}
+.pricing-grid{display;grid-template-columns(auto-fit,minmax(220px,1fr));gap:25px;margin-top:30px;}
 
-.pricing-card{
-  background:#fafafa;
-  border:1px solid #e5e5e5;
-  border-radius:12px;
-  padding:28px 24px;
-  text-align:center;
-  box-shadow:0 8px 20px rgba(0,0,0,0.04);
-}
+.pricing-card{background:#fafafa;border:1px solid #e5e5e5;border-radius:12px;padding:28px 24px;text-align;box-shadow:0 8px 20px rgba(0,0,0,0.04);}
 
-.pricing-card h3{
-  margin-bottom:8px;
-}
+.pricing-card h3{margin-bottom:8px;}
 
-.price{
-  font-size:32px;
-  font-weight:700;
-  color:#333;
-  margin:14px 0 6px;
-}
+.price{font-size:32px;font-weight:700;color:#333;margin:14px 0 6px;}
 
-.price span{
-  font-size:15px;
-  font-weight:500;
-  color:#666;
-}
+.price span{font-size:15px;font-weight:500;color:#666;}
 
-.pricing-note{
-  text-align:center;
-  max-width:760px;
-  margin:28px auto 0;
-  color:#666;
-  font-size:15px;
-}
+.pricing-note{text-align;max-width:760px;margin:28px auto 0;color:#666;font-size:15px;}
 
 /* VIDEO */
 
-.phone-video{
-  max-width:320px;
-  margin:40px auto 0;
-}
+.phone-video{max-width:320px;margin:40px auto 0;}
 
-.phone-video video{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.12);
-}
+.phone-video video{width:100%;height;display;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.12);}
 
-.video{
-  text-align:center;
-}
+.video{text-align;}
 
 /* IMAGE ANNOTATION */
 
-.annotation-demo{
-  max-width:900px;
-  margin:35px auto 0;
-  display:grid;
-  grid-template-columns:minmax(0, 340px) 1fr;
-  gap:45px;
-  align-items:center;
-}
+.annotation-demo{max-width:900px;margin:35px auto 0;display;grid-template-columns(0, 340px) 1fr;gap:45px;align-items;}
 
-.annotation-demo video{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.12);
-}
+.annotation-demo video{width:100%;height;display;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.12);}
 
-.annotation-demo ul{
-  padding-left:20px;
-}
+.annotation-demo ul{padding-left:20px;}
 
-.annotation-demo li{
-  margin-bottom:10px;
-}
+.annotation-demo li{margin-bottom:10px;}
 
-@media(max-width:900px){
-  .annotation-demo{
-    grid-template-columns:1fr;
-    max-width:420px;
-  }
-}
+@media(max-width:900px){.annotation-demo{grid-template-columns:1fr;max-width:420px;}}
 
 /* TABLE */
 
-.comparison{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:20px;
-}
+.comparison{width:100%;border-collapse;margin-top:20px;}
 
-.comparison th,
-.comparison td{
-  padding:14px;
-  border-bottom:1px solid #ddd;
-}
-.comparison th{
-  font-weight:600;
-}
-  .comparison + p{
-margin-top:30px;
-}
-.comparison-caption{
-margin-top:30px;
-max-width:720px;
-font-size:16px;
-color:#555;
-text-align:center;
-margin-left:auto;
-margin-right:auto;
-line-height:1.6;
-}
-/* First column (feature names) */
-.comparison td:first-child,
-.comparison th:first-child{
-  text-align:left;
-}
+.comparison th,.comparison td{padding:14px;border-bottom:1px solid #ddd;}.comparison th{font-weight:600;}.comparison + p{margin-top:30px;}.comparison-caption{margin-top:30px;max-width:720px;font-size:16px;color:#555;text-align;margin-left;margin-right;line-height:1.6;}/* First column (feature names) */.comparison td,.comparison th{text-align;}
 
-/* Paper / InspectEquip columns */
-.comparison td:not(:first-child),
-.comparison th:not(:first-child){
-  text-align:center;
-}
-.comparison tr:nth-child(even){
-  background:#fafafa;
-}
-/* CTA */
+/* Paper / InspectEquip columns /.comparison td(),.comparison th(){text-align;}.comparison tr(even){background:#fafafa;}/ CTA */
 
-.cta{
-  text-align:center;
-  background:white;
-  padding:90px 20px;
-  margin-top:20px;
-}
+.cta{text-align;background;padding:90px 20px;margin-top:20px;}
 
-.cta button{
-  margin-top:20px;
-}
+.cta button{margin-top:20px;}
 
 /* CONTACT */
 
-.contact-section{
-  max-width:800px;
-}
+.contact-section{max-width:800px;}
 
-.contact-intro{
-  max-width:650px;
-  margin-bottom:30px;
-  color:#666;
-}
+.contact-intro{max-width:650px;margin-bottom:30px;color:#666;}
 
-.contact-form{
-  background:#fff;
-  padding:32px;
-  border:1px solid #e9e9e9;
-  border-radius:12px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.04);
-}
+.contact-form{background:#fff;padding:32px;border:1px solid #e9e9e9;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.04);}
 
-.form-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-  margin-bottom:20px;
-}
+.form-row{display;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
 
-.form-group{
-  display:flex;
-  flex-direction:column;
-  margin-bottom:20px;
-}
+.form-group{display;flex-direction;margin-bottom:20px;}
 
-.form-group label{
-  font-weight:600;
-  margin-bottom:8px;
-  font-size:14px;
-  color:#333;
-}
+.form-group label{font-weight:600;margin-bottom:8px;font-size:14px;color:#333;}
 
-.form-group input,
-.form-group textarea{
-  padding:14px 16px;
-  border:1px solid #d9d9d9;
-  border-radius:8px;
-  font-size:16px;
-  font-family:inherit;
-  color:#333;
-  background:#fff;
-  box-sizing:border-box;
-}
+.form-group input,.form-group textarea{padding:14px 16px;border:1px solid #d9d9d9;border-radius:8px;font-size:16px;font-family;color:#333;background:#fff;box-sizing;}
 
-.form-group input:focus,
-.form-group textarea:focus{
-  outline:none;
-  border-color:#FFC700;
-  box-shadow:0 0 0 3px rgba(255,199,0,0.15);
-}
+.form-group input,.form-group textarea{outline;border-color:#FFC700;box-shadow:0 0 0 3px rgba(255,199,0,0.15);}
 
 /* FOOTER */
 
-footer{
-  text-align:center;
-  padding:40px 20px;
-  color:#777;
-}
+footer{text-align;padding:40px 20px;color:#777;}
 
-/* MOBILE */
-@media(max-width:900px){
+/* MOBILE */@media(max-width:900px){
 
-.grid{
-grid-template-columns:1fr;
-}
+.grid{grid-template-columns:1fr;}
 
-.hero h1{
-font-size:34px;
-}
+.hero h1{font-size:34px;}
 
-.nav{
-flex-direction:column;
-gap:10px;
-}
+.nav{flex-direction;gap:10px;}
 
-.nav-links{
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-}
+.nav-links{flex-wrap;justify-content;gap:15px;}
 
-.form-row{
-grid-template-columns:1fr;
-}
+.form-row{grid-template-columns:1fr;}
 
-.grid img{
-max-width:300px;
-}
+.grid img{max-width:300px;}
 
-}
-@media (min-width:768px){
-  .how-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-}
+}@media (min-width:768px){.how-grid{grid-template-columns(3,1fr);}}
 
-@media (max-width:900px){
-  .grid > div{
-margin-bottom:20px;
-}
-  #heavy .heavy-text{
-order:1;
-}
+@media (max-width:900px){.grid > div{margin-bottom:20px;}#heavy .heavy-text{order:1;}
 
-#heavy .heavy-image{
-order:2;
-}
-  .grid{
-    grid-template-columns:1fr;
-  }
+#heavy .heavy-image{order:2;}.grid{grid-template-columns:1fr;}
 
-  .hero h1{
-    font-size:34px;
-  }
+.hero h1{font-size:34px;}
 
-  .nav{
-    flex-direction:column;
-    gap:10px;
-  }
+.nav{flex-direction;gap:10px;}
 
-  .nav-links{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-  }
+.nav-links{flex-wrap;justify-content;gap:15px;}
 
-  .form-row{
-    grid-template-columns:1fr;
-  }
-}
+.form-row{grid-template-columns:1fr;}}
 
-@media (max-width:640px){
-  .hero{
-    padding:90px 20px;
-  }
+@media (max-width:640px){.hero{padding:90px 20px;}
 
-  .hero p{
-    font-size:17px;
-  }
+.hero p{font-size:17px;}
 
-  .btn-primary,
-  .btn-secondary{
-    width:100%;
-    margin:0 0 12px 0;
-  }
+.btn-primary,.btn-secondary{width:100%;margin:0 0 12px 0;}
 
-  .feature-icon{
-    width:84px;
-    height:84px;
-  }
+.feature-icon{width:84px;height:84px;}
 
-  .comparison{
-    font-size:14px;
-  }
+.comparison{font-size:14px;}
 
-  .comparison th,
-  .comparison td{
-    padding:10px;
-  }
-}
-</style>
+.comparison th,.comparison td{padding:10px;}}</style>
+
 </head>
 
 <body>
@@ -667,20 +249,23 @@ order:2;
       <img src="images/InspectEquipForWhiteBG.png" alt="InspectEquip">
     </div>
 
-    <nav class="nav-links">
-      <a href="#how">How it Works</a>
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#automotive">Automotive</a>
-      <a href="#heavy">Heavy & Machinery</a>
-      <a href="https://inspectequip.com/help.html">App Help</a>
-      <a href="#contact">Get in touch</a>
-    </nav>
+<nav class="nav-links">
+  <a href="#how">How it Works</a>
+  <a href="#features">Features</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#automotive">Automotive</a>
+  <a href="#heavy">Heavy & Machinery</a>
+  <a href="https://inspectequip.com/help.html">App Help</a>
+  <a href="#contact">Get in touch</a>
+</nav>
+
   </div>
 </header>
 
 <section class="hero">
-  <h1>Inspections, Service Reports, Breakdown Reports & Repair Reports.</h1>
+  <img src="images/homehero.png" alt="InspectEquip app preview">
+
+<h1>Inspections, Service Reports, Breakdown Reports & Repair Reports.</h1>
 
 <p>
 InspectEquip™ helps mechanics create professional inspection reports, service reports, breakdown reports and repair reports directly from their phone or tablet.
@@ -718,19 +303,20 @@ Capture photos, mark up defects with arrows, circles and drawings, collect signa
   <div class="container">
     <h2>Trust is one of the biggest challenges in the industry.</h2>
 
-    <p>
-      Customers can't see what you see in the workshop or in the field.
-    </p>
+<p>
+  Customers can't see what you see in the workshop or in the field.
+</p>
 
-    <p>
-      When faults are explained verbally, many customers hesitate to approve work because they don't fully understand the issue.
-    </p>
+<p>
+  When faults are explained verbally, many customers hesitate to approve work because they don't fully understand the issue.
+</p>
 
-    <p>
-      InspectEquip removes that barrier by giving mechanics a simple way to document inspections and show clear proof of what they find.
-    </p>
+<p>
+  InspectEquip removes that barrier by giving mechanics a simple way to document inspections and show clear proof of what they find.
+</p>
 
-    <p><strong>Instead of telling customers what's wrong — you show them.</strong></p>
+<p><strong>Instead of telling customers what's wrong — you show them.</strong></p>
+
   </div>
 </section>
 
@@ -760,19 +346,19 @@ Now we're giving other mechanics and workshops the opportunity to solve the same
 
 </section>
 
-
 <section id="video" class="section">
   <div class="container video">
     <h2>See InspectEquip in Action</h2>
 
 <p>Watch how InspectEquip helps mechanics create inspection reports, service reports, breakdown reports and repair reports directly from their device.</p>
-    
-    <div class="phone-video">
-      <video controls playsinline>
-        <source src="images/0713a.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+
+<div class="phone-video">
+  <video controls playsinline>
+    <source src="images/0713a.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
   </div>
 </section>
 
@@ -780,7 +366,8 @@ Now we're giving other mechanics and workshops the opportunity to solve the same
   <div class="container">
     <h2>How InspectEquip Works</h2>
 
-    <div class="how-grid">
+<div class="how-grid">
+
   <div class="feature-card">
     <img src="images/inspectequip_square_1.png" class="feature-icon" alt="Mechanic starting a report with phone">
     <h3>Start a Report</h3>
@@ -802,7 +389,6 @@ Now we're giving other mechanics and workshops the opportunity to solve the same
   </div>
 </section>
 
-
 <section class="section">
   <div class="container">
     <div style="text-align:center;">
@@ -812,23 +398,24 @@ Now we're giving other mechanics and workshops the opportunity to solve the same
       </p>
     </div>
 
-    <div class="annotation-demo">
-      <video controls playsinline>
-        <source src="images/image-annotation1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+<div class="annotation-demo">
+  <video controls playsinline>
+    <source src="images/image-annotation1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-      <div>
-        <h3>Make every finding easier to understand</h3>
-        <ul>
-          <li>Add arrows, circles or ovals.</li>
-          <li>Choose a visible annotation colour for each photo.</li>
-          <li>Resize, rotate and reposition annotations.</li>
-          <li>Include the marked-up image in the customer's PDF report.</li>
-        </ul>
-        <p><strong>Instead of just attaching a photo, clearly show the customer exactly where the problem is.</strong></p>
-      </div>
-    </div>
+  <div>
+    <h3>Make every finding easier to understand</h3>
+    <ul>
+      <li>Add arrows, circles or ovals.</li>
+      <li>Choose a visible annotation colour for each photo.</li>
+      <li>Resize, rotate and reposition annotations.</li>
+      <li>Include the marked-up image in the customer's PDF report.</li>
+    </ul>
+    <p><strong>Instead of just attaching a photo, clearly show the customer exactly where the problem is.</strong></p>
+  </div>
+</div>
+
   </div>
 </section>
 
@@ -837,15 +424,16 @@ Now we're giving other mechanics and workshops the opportunity to solve the same
     <div>
       <h2>For Automotive Workshops & Mobile Mechanics</h2>
 
-      <p>
-InspectEquip helps automotive workshops and mobile mechanics create professional inspection reports, service reports, breakdown reports and repair reports with clear photo evidence and marked-up images customers can understand.
-      </p>
+  <p>
 
-      <p>
-        Designed for workshop floors, roadside inspections, and mobile mechanics — even without internet connection.
-      </p>
+InspectEquip helps automotive workshops and mobile mechanics create professional inspection reports, service reports, breakdown reports and repair reports with clear photo evidence and marked-up images customers can understand.</p>
 
-     <ul>
+  <p>
+    Designed for workshop floors, roadside inspections, and mobile mechanics — even without internet connection.
+  </p>
+
+ <ul>
+
   <li>Routine servicing</li>
   <li>Brake & suspension inspections</li>
   <li>Pre-purchase inspections</li>
@@ -855,9 +443,10 @@ InspectEquip helps automotive workshops and mobile mechanics create professional
 </ul>
     </div>
 
-    <div>
-      <img src="images/automotive-screenshot.png" alt="Automotive workshop inspection screenshot">
-    </div>
+<div>
+  <img src="images/automotive-screenshot.png" alt="Automotive workshop inspection screenshot">
+</div>
+
   </div>
 </section>
 
@@ -872,15 +461,16 @@ InspectEquip helps automotive workshops and mobile mechanics create professional
 <div class="heavy-text">
       <h2>For Heavy Vehicle & Machinery Mechanics</h2>
 
-      <p>
-InspectEquip makes it easy to create inspection reports, service reports, breakdown reports and repair reports for heavy vehicles, equipment and machinery with photo evidence, image annotations and professional PDF reports.
-      </p>
+  <p>
 
-      <p>
-Built for field work and remote job sites where an internet connection isn't always available. InspectEquip is optimised for offline use, with customer, vehicle and report data stored locally on your device.
-      </p>
+InspectEquip makes it easy to create inspection reports, service reports, breakdown reports and repair reports for heavy vehicles, equipment and machinery with photo evidence, image annotations and professional PDF reports.</p>
 
-      <ul>
+  <p>
+
+Built for field work and remote job sites where an internet connection isn't always available. InspectEquip is optimised for offline use, with customer, vehicle and report data stored locally on your device.</p>
+
+  <ul>
+
   <li>Fleet maintenance</li>
         <li>Service reporting</li>
   <li>Machinery condition reports</li>
